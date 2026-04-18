@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Disallow admin or private pages if needed
+# Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://zilonews.github.io/sitemap.xml
+
+# Crawl-delay for well-behaved bots
+Crawl-delay: 1

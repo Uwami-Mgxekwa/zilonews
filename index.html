@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <!-- ============================================================
+       META — CHARACTER SET & VIEWPORT
+  ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- ============================================================
+       PRIMARY SEO META TAGS
+  ============================================================ -->
+  <title>ZiloNews — Breaking News | Tech, Politics, World Affairs &amp; More</title>
+  <meta name="description" content="ZiloNews delivers the latest breaking news, in-depth analysis, and real-time updates on technology, politics, world affairs, business, science, health, and culture from across the globe." />
+  <meta name="keywords" content="breaking news, latest news, tech news, politics news, world affairs, business news, science news, global news, South Africa news, ZiloNews" />
+  <meta name="author" content="ZiloNews Editorial Team" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="revisit-after" content="1 day" />
+  <meta name="language" content="English" />
+  <meta name="coverage" content="Worldwide" />
+  <meta name="distribution" content="Global" />
+  <meta name="rating" content="General" />
+  <link rel="canonical" href="https://zilonews.github.io/" />
+
+  <!-- ============================================================
+       OPEN GRAPH (Facebook, LinkedIn, WhatsApp)
+  ============================================================ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ZiloNews" />
+  <meta property="og:title" content="ZiloNews — Breaking News | Tech, Politics, World Affairs &amp; More" />
+  <meta property="og:description" content="ZiloNews delivers the latest breaking news, in-depth analysis, and real-time updates on technology, politics, world affairs, business, science, health, and culture from across the globe." />
+  <meta property="og:url" content="https://zilonews.github.io/" />
+  <meta property="og:image" content="https://zilonews.github.io/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="ZiloNews — Your World, Your News" />
+  <meta property="og:locale" content="en_ZA" />
+
+  <!-- ============================================================
+       TWITTER CARD
+  ============================================================ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@ZiloNews" />
+  <meta name="twitter:creator" content="@ZiloNews" />
+  <meta name="twitter:title" content="ZiloNews — Breaking News | Tech, Politics, World Affairs &amp; More" />
+  <meta name="twitter:description" content="ZiloNews delivers the latest breaking news, in-depth analysis, and real-time updates on technology, politics, world affairs, business, science, health, and culture." />
+  <meta name="twitter:image" content="https://zilonews.github.io/assets/og-image.png" />
+  <meta name="twitter:image:alt" content="ZiloNews — Your World, Your News" />
+
+  <!-- ============================================================
+       FAVICONS & THEME
+  ============================================================ -->
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
+  <link rel="shortcut icon" href="assets/logo.png" type="image/png" />
+  <meta name="theme-color" content="#E8001D" />
+  <meta name="msapplication-TileColor" content="#E8001D" />
+  <meta name="msapplication-TileImage" content="assets/logo.png" />
+
+  <!-- ============================================================
+       PWA MANIFEST (create manifest.json for full PWA)
+  ============================================================ -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- ============================================================
+       GOOGLE FONTS — Performance-Optimised Load
+  ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" />
+  </noscript>
+
+  <!-- ============================================================
+       MAIN STYLESHEET
+  ============================================================ -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- ============================================================
+       STRUCTURED DATA — WebSite + Sitelinks Searchbox
+  ============================================================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ZiloNews",
+    "url": "https://zilonews.github.io/",
+    "description": "ZiloNews delivers the latest breaking news, in-depth analysis, and real-time updates on technology, politics, world affairs, business, science, health, and culture from across the globe.",
+    "inLanguage": "en",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://zilonews.github.io/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ZiloNews",
+      "url": "https://zilonews.github.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://zilonews.github.io/assets/logo.png",
+        "width": 300,
+        "height": 300
+      },
+      "sameAs": [
+        "https://twitter.com/ZiloNews",
+        "https://facebook.com/ZiloNews",
+        "https://instagram.com/ZiloNews",
+        "https://youtube.com/@ZiloNews"
+      ]
+    }
+  }
+  </script>
+
+  <!-- Breadcrumb Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zilonews.github.io/" }
+    ]
+  }
+  </script>
+
+  <!-- News Article Structured Data (example for hero) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Global AI Summit Reaches Landmark Agreement on Ethical Intelligence Standards",
+    "description": "World leaders and tech giants converge in Geneva to sign a historic accord governing the development and deployment of artificial intelligence systems globally.",
+    "image": "https://zilonews.github.io/assets/logo.png",
+    "datePublished": "2026-04-18T08:00:00+02:00",
+    "dateModified": "2026-04-18T10:30:00+02:00",
+    "author": { "@type": "Person", "name": "ZiloNews Staff" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ZiloNews",
+      "logo": { "@type": "ImageObject", "url": "https://zilonews.github.io/assets/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://zilonews.github.io/" }
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- Skip Navigation (Accessibility) -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Reading Progress Bar -->
+  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Reading progress"></div>
+
+  <!-- ============================================================
+       TOP BAR
+  ============================================================ -->
+  <div class="top-bar" role="banner" aria-label="Site information">
+    <div class="top-bar__inner">
+      <div class="top-bar__date">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        <span id="live-datetime" aria-live="polite">Loading date…</span>
+      </div>
+      <nav class="top-bar__links" aria-label="Secondary navigation">
+        <a href="#" id="nav-weather-top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+          Weather
+        </a>
+        <a href="#">E-Paper</a>
+        <a href="#">Newsletter</a>
+        <a href="#">Live TV</a>
+      </nav>
+      <div class="top-bar__social" aria-label="Social media links">
+        <!-- Twitter/X -->
+        <a href="https://twitter.com/ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="Follow ZiloNews on Twitter">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <!-- Facebook -->
+        <a href="https://facebook.com/ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="Follow ZiloNews on Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <!-- Instagram -->
+        <a href="https://instagram.com/ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="Follow ZiloNews on Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+        <!-- YouTube -->
+        <a href="https://youtube.com/@ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to ZiloNews on YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       BREAKING NEWS TICKER
+  ============================================================ -->
+  <div class="ticker" role="marquee" aria-label="Breaking news ticker" aria-live="polite">
+    <div class="ticker__label">
+      <span class="ticker__dot" aria-hidden="true"></span>
+      BREAKING
+    </div>
+    <div class="ticker__track">
+      <div class="ticker__items" aria-live="off">
+        <span class="ticker__item">Global AI Summit reaches historic accord on ethical intelligence standards in Geneva</span>
+        <span class="ticker__item">South African Rand strengthens as mining sector posts record quarterly output</span>
+        <span class="ticker__item">SpaceX successfully launches 200th Starlink mission with upgraded v3 satellites</span>
+        <span class="ticker__item">United Nations emergency session convened over escalating tensions in Eastern Europe</span>
+        <span class="ticker__item">Apple unveils next-generation neural chip with 3nm architecture — iPhone 19 confirmed</span>
+        <span class="ticker__item">WHO declares new respiratory illness under close monitoring across five continents</span>
+        <span class="ticker__item">Bitcoin surges past $120,000 as institutional ETF inflows hit all-time high</span>
+        <span class="ticker__item">Cape Town scientist wins Nobel Prize in Chemistry for breakthrough carbon capture research</span>
+        <span class="ticker__item">G20 leaders agree on landmark 25% reduction in fossil fuel subsidies by 2028</span>
+        <span class="ticker__item">African Continental Free Trade Area posts $4.2 trillion GDP milestone ahead of schedule</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SITE HEADER
+  ============================================================ -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="header__inner">
+      <!-- Logo -->
+      <a class="site-logo" href="/" aria-label="ZiloNews — Home">
+        <img src="assets/logo.png" alt="ZiloNews logo" width="46" height="46" fetchpriority="high" />
+        <span class="site-logo__name">Zilo<span>News</span></span>
+      </a>
+
+      <!-- Main Navigation -->
+      <nav class="main-nav" aria-label="Main navigation" id="main-nav">
+        <ul class="main-nav__list" role="list">
+          <li class="main-nav__item">
+            <a class="main-nav__link active" href="/" aria-current="page">Home</a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="#technology" aria-haspopup="true" aria-expanded="false">
+              Tech
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nav-dropdown" role="menu" aria-label="Technology submenu">
+              <a class="nav-dropdown__link" href="#" role="menuitem">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                Artificial Intelligence
+              </a>
+              <a class="nav-dropdown__link" href="#" role="menuitem">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                Cybersecurity
+              </a>
+              <a class="nav-dropdown__link" href="#" role="menuitem">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                Space &amp; Science
+              </a>
+              <a class="nav-dropdown__link" href="#" role="menuitem">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                Gadgets
+              </a>
+            </div>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="#politics" aria-haspopup="true" aria-expanded="false">
+              Politics
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nav-dropdown" role="menu" aria-label="Politics submenu">
+              <a class="nav-dropdown__link" href="#" role="menuitem">Global Politics</a>
+              <a class="nav-dropdown__link" href="#" role="menuitem">Africa</a>
+              <a class="nav-dropdown__link" href="#" role="menuitem">USA &amp; Americas</a>
+              <a class="nav-dropdown__link" href="#" role="menuitem">Europe</a>
+              <a class="nav-dropdown__link" href="#" role="menuitem">Middle East</a>
+              <a class="nav-dropdown__link" href="#" role="menuitem">Elections</a>
+            </div>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="#world" aria-haspopup="true" aria-expanded="false">
+              World
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="nav-dropdown" role="menu" aria-label="World submenu">
+              <a class="nav-dropdown__link" href="#" role="menuitem">Africa</a>
+              <a class="nav-dropdown__link" href="#" role="menuitem">Asia Pacific</a>
+              <a class="nav-dropdown__link" href="#" role="menuitem">Europe</a>
+              <a class="nav-dropdown__link" href="#" role="menuitem">Americas</a>
+              <a class="nav-dropdown__link" href="#" role="menuitem">Middle East</a>
+            </div>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="#business">Business</a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="#science">Science</a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="#sports">Sports</a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="#health">Health</a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="#culture">Culture</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header__actions">
+        <button class="btn-search" id="btn-search" aria-label="Open search" aria-expanded="false" aria-controls="search-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+        <a class="btn-subscribe" href="#" id="btn-subscribe-header" role="button">Subscribe Free</a>
+        <!-- Hamburger -->
+        <button class="btn-hamburger" id="btn-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       SEARCH OVERLAY
+  ============================================================ -->
+  <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search ZiloNews">
+    <div class="search-overlay__inner">
+      <form class="search-overlay__form" role="search" action="/search" method="get">
+        <label for="search-input" class="sr-only">Search news</label>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input
+          class="search-overlay__input"
+          id="search-input"
+          name="q"
+          type="search"
+          placeholder="Search news, topics, stories…"
+          autocomplete="off"
+          spellcheck="false"
+          aria-label="Search query"
+        />
+        <button class="search-overlay__btn" type="submit" aria-label="Submit search">Search</button>
+      </form>
+      <button class="search-overlay__close" id="btn-close-search" aria-label="Close search">Press Esc to close</button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MOBILE NAV DRAWER
+  ============================================================ -->
+  <div class="mobile-nav__overlay" id="mobile-nav-overlay" aria-hidden="true"></div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+    <button class="mobile-nav__close" id="btn-close-nav" aria-label="Close menu">✕</button>
+    <a class="site-logo" href="/" aria-label="ZiloNews Home" style="margin-bottom:20px;display:flex;">
+      <img src="assets/logo.png" alt="ZiloNews" width="36" height="36" />
+      <span class="site-logo__name" style="font-size:17px;">Zilo<span>News</span></span>
+    </a>
+    <ul class="mobile-nav__list" role="list">
+      <li><a class="mobile-nav__link" href="/" aria-current="page">🏠 Home</a></li>
+      <li>
+        <a class="mobile-nav__link" href="#technology">💻 Technology</a>
+        <div class="mobile-nav__sub">
+          <a href="#">Artificial Intelligence</a>
+          <a href="#">Cybersecurity</a>
+          <a href="#">Space &amp; Science</a>
+          <a href="#">Gadgets</a>
+        </div>
+      </li>
+      <li>
+        <a class="mobile-nav__link" href="#politics">🗳️ Politics</a>
+        <div class="mobile-nav__sub">
+          <a href="#">Global Politics</a>
+          <a href="#">Africa</a>
+          <a href="#">USA &amp; Americas</a>
+          <a href="#">Europe</a>
+          <a href="#">Elections</a>
+        </div>
+      </li>
+      <li>
+        <a class="mobile-nav__link" href="#world">🌍 World</a>
+        <div class="mobile-nav__sub">
+          <a href="#">Africa</a>
+          <a href="#">Asia Pacific</a>
+          <a href="#">Europe</a>
+          <a href="#">Americas</a>
+          <a href="#">Middle East</a>
+        </div>
+      </li>
+      <li><a class="mobile-nav__link" href="#business">💼 Business</a></li>
+      <li><a class="mobile-nav__link" href="#science">🔬 Science</a></li>
+      <li><a class="mobile-nav__link" href="#sports">⚽ Sports</a></li>
+      <li><a class="mobile-nav__link" href="#health">🏥 Health</a></li>
+      <li><a class="mobile-nav__link" href="#culture">🎭 Culture</a></li>
+    </ul>
+    <div class="mobile-nav__divider"></div>
+    <a class="btn-subscribe" href="#" style="display:block;text-align:center;border-radius:8px;padding:13px;">Subscribe Free</a>
+  </nav>
+
+  <!-- ============================================================
+       MAIN CONTENT
+  ============================================================ -->
+  <main id="main-content" role="main">
+
+    <!-- ============================================================
+         HERO SECTION
+    ============================================================ -->
+    <section class="hero" aria-label="Featured stories">
+      <div class="container">
+
+        <!-- Breaking Banner -->
+        <div class="breaking-banner fade-in" role="alert" aria-live="assertive">
+          <span class="breaking-banner__badge">🔴 Breaking</span>
+          <p class="breaking-banner__text">Global AI Safety Summit concludes in Geneva — world leaders sign landmark accord on ethical artificial intelligence development and governance.</p>
+          <a class="breaking-banner__link" href="#">
+            Read Full Story
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <div class="hero__grid">
+          <!-- Hero Main Article -->
+          <article class="hero__main fade-in" aria-label="Main featured story" role="article">
+            <div class="hero__main-bg" aria-hidden="true"></div>
+            <div class="hero__main-overlay" aria-hidden="true"></div>
+            <div class="hero__main-content">
+              <span class="tag tag--tech">Artificial Intelligence</span>
+              <h1 class="hero__main-title">
+                Global AI Summit Reaches Landmark Agreement on Ethical Intelligence Standards
+              </h1>
+              <div class="hero__main-meta">
+                <span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  ZiloNews Staff
+                </span>
+                <span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <time datetime="2026-04-18T08:00:00+02:00">18 April 2026</time>
+                </span>
+                <span>8 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Hero Side Cards -->
+          <div class="hero__side">
+            <article class="hero__card fade-in stagger-1" aria-label="Featured story 2" role="article">
+              <div class="hero__card-bg hero__card-bg-1" aria-hidden="true"></div>
+              <div class="hero__card-overlay" aria-hidden="true"></div>
+              <div class="hero__card-content">
+                <span class="tag tag--politics">Politics</span>
+                <h2 class="hero__card-title">African Union Proposes Unified Digital Currency Framework at Extraordinary Summit</h2>
+                <div class="hero__card-meta">
+                  <time datetime="2026-04-18T06:30:00+02:00">6h ago</time>
+                  <span>5 min read</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="hero__card fade-in stagger-2" aria-label="Featured story 3" role="article">
+              <div class="hero__card-bg hero__card-bg-2" aria-hidden="true"></div>
+              <div class="hero__card-overlay" aria-hidden="true"></div>
+              <div class="hero__card-content">
+                <span class="tag tag--world">World</span>
+                <h2 class="hero__card-title">UN Security Council Votes on New Climate Migration Refugee Protocol</h2>
+                <div class="hero__card-meta">
+                  <time datetime="2026-04-18T04:00:00+02:00">9h ago</time>
+                  <span>4 min read</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         STATS BAR
+    ============================================================ -->
+    <section class="container" aria-label="Publication statistics">
+      <div class="stats-bar fade-in" role="list">
+        <div class="stats-bar__divider" role="listitem">
+          <div class="stats-bar__num" data-counter="2400" data-suffix="+" aria-label="2400 plus articles published">0</div>
+          <div class="stats-bar__label">Articles Published</div>
+        </div>
+        <div class="stats-bar__divider" role="listitem">
+          <div class="stats-bar__num" data-counter="180" data-suffix="+" aria-label="180 plus countries covered">0</div>
+          <div class="stats-bar__label">Countries Covered</div>
+        </div>
+        <div class="stats-bar__divider" role="listitem">
+          <div class="stats-bar__num" data-counter="48" aria-label="48 live updates today">0</div>
+          <div class="stats-bar__label">Live Updates Today</div>
+        </div>
+        <div class="stats-bar__divider" role="listitem">
+          <div class="stats-bar__num" data-counter="12" data-suffix="k+" aria-label="12 thousand plus readers today">0</div>
+          <div class="stats-bar__label">Readers Today</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MAIN CONTENT + SIDEBAR
+    ============================================================ -->
+    <div class="container">
+      <div class="content-grid" style="margin-top:8px;">
+
+        <!-- ========== LEFT: Main Content Area ========== -->
+        <div class="main-content">
+
+          <!-- ---- TECHNOLOGY SECTION ---- -->
+          <section class="category-band" id="technology" aria-label="Technology news">
+            <div class="category-band__header">
+              <h2 class="category-band__title">
+                <span class="category-band__title-bar" style="background:var(--blue);" aria-hidden="true"></span>
+                💻 Technology
+                <span class="live-badge" aria-label="Live coverage">
+                  <span class="live-badge__dot" aria-hidden="true"></span>LIVE
+                </span>
+              </h2>
+              <a class="category-band__more" href="#" aria-label="More technology news">
+                More Tech
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+
+            <div class="news-grid">
+              <article class="article-card fade-in stagger-1" role="article" aria-label="Article: Apple Intelligence 2.0">
+                <div class="article-card__img">
+                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#0055A5,#1a3a6b);">💻</div>
+                </div>
+                <div class="article-card__body">
+                  <div class="article-card__tag"><span class="tag tag--tech">AI</span></div>
+                  <h3 class="article-card__title">Apple Intelligence 2.0 Brings On-Device LLM Rivaling ChatGPT Without Cloud Dependency</h3>
+                  <p class="article-card__excerpt">Apple's next-generation AI system processes complex reasoning tasks entirely on-device, marking a seismic shift in privacy-first computing.</p>
+                  <div class="article-card__meta">
+                    <div class="article-card__author-avatar" aria-hidden="true">JM</div>
+                    <span>James Moyo</span>
+                    <span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <time datetime="2026-04-18T09:00:00+02:00">2h ago</time>
+                    </span>
+                    <span>6 min</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="article-card fade-in stagger-2" role="article" aria-label="Article: Quantum Computing breakthrough">
+                <div class="article-card__img">
+                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#1a0040,#5A32C8);">⚛️</div>
+                </div>
+                <div class="article-card__body">
+                  <div class="article-card__tag"><span class="tag tag--science">Quantum</span></div>
+                  <h3 class="article-card__title">IBM's Eagle Quantum Processor Achieves 1,000-Qubit Stable Operation — Industry Milestone</h3>
+                  <p class="article-card__excerpt">A new era of quantum computing has arrived as IBM's processor demonstrates stable operation at unprecedented scale.</p>
+                  <div class="article-card__meta">
+                    <div class="article-card__author-avatar" aria-hidden="true">SN</div>
+                    <span>Siya Nkosi</span>
+                    <span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <time datetime="2026-04-18T07:00:00+02:00">4h ago</time>
+                    </span>
+                    <span>7 min</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="article-card fade-in stagger-3" role="article" aria-label="Article: Meta AR glasses">
+                <div class="article-card__img">
+                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#003c78,#0055A5);">🥽</div>
+                </div>
+                <div class="article-card__body">
+                  <div class="article-card__tag"><span class="tag tag--tech">Gadgets</span></div>
+                  <h3 class="article-card__title">Meta's Orion AR Glasses Ship to Early Access Developers With Holographic Interface</h3>
+                  <p class="article-card__excerpt">The next frontier of spatial computing is here as Meta ships its first consumer-grade holographic AR device.</p>
+                  <div class="article-card__meta">
+                    <div class="article-card__author-avatar" aria-hidden="true">LB</div>
+                    <span>Lisa Botha</span>
+                    <span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <time datetime="2026-04-18T05:00:00+02:00">6h ago</time>
+                    </span>
+                    <span>5 min</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- List articles -->
+            <div class="section-block">
+              <div class="article-list" role="list">
+                <article class="article-list-item fade-in" role="listitem article">
+                  <div class="article-list-item__img">
+                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#14B980,#0a6b46);">🔒</div>
+                  </div>
+                  <div class="article-list-item__body">
+                    <div class="article-list-item__tag"><span class="tag tag--tech">Cybersecurity</span></div>
+                    <h3 class="article-list-item__title">Critical Zero-Day Vulnerability Discovered in Windows 12 Kernel — Patch Available</h3>
+                    <div class="article-list-item__meta">
+                      <span>ZiloNews Tech</span> · <time datetime="2026-04-18T03:00:00+02:00">8h ago</time> · 3 min read
+                    </div>
+                  </div>
+                </article>
+                <article class="article-list-item fade-in" role="listitem article">
+                  <div class="article-list-item__img">
+                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#FF6B00,#994000);">🚀</div>
+                  </div>
+                  <div class="article-list-item__body">
+                    <div class="article-list-item__tag"><span class="tag tag--science">Space</span></div>
+                    <h3 class="article-list-item__title">SpaceX Starship Successfully Completes Full Orbital Flight Test With Payload Delivery</h3>
+                    <div class="article-list-item__meta">
+                      <span>ZiloNews Science</span> · <time datetime="2026-04-17T20:00:00+02:00">Yesterday</time> · 4 min read
+                    </div>
+                  </div>
+                </article>
+                <article class="article-list-item fade-in" role="listitem article">
+                  <div class="article-list-item__img">
+                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#E8001D,#7B0010);">🤖</div>
+                  </div>
+                  <div class="article-list-item__body">
+                    <div class="article-list-item__tag"><span class="tag tag--tech">AI</span></div>
+                    <h3 class="article-list-item__title">OpenAI GPT-5 System Card Released — Scores 96% on Comprehensive Safety Benchmarks</h3>
+                    <div class="article-list-item__meta">
+                      <span>ZiloNews Tech</span> · <time datetime="2026-04-17T15:00:00+02:00">Yesterday</time> · 5 min read
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <!-- ---- POLITICS SECTION ---- -->
+          <section class="category-band" id="politics" aria-label="Politics news">
+            <div class="category-band__header">
+              <h2 class="category-band__title">
+                <span class="category-band__title-bar" style="background:var(--red);" aria-hidden="true"></span>
+                🗳️ Politics
+              </h2>
+              <a class="category-band__more" href="#" aria-label="More politics news">
+                More Politics
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+
+            <div class="news-grid news-grid--2col">
+              <article class="article-card fade-in stagger-1" role="article">
+                <div class="article-card__img">
+                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#E8001D,#4a0010);">🗳️</div>
+                </div>
+                <div class="article-card__body">
+                  <div class="article-card__tag"><span class="tag tag--politics">Africa</span></div>
+                  <h3 class="article-card__title">South Africa's National Election Commission Announces Snap By-Elections in Five Provinces</h3>
+                  <p class="article-card__excerpt">The IEC has confirmed by-election dates following coalition government changes that reshaped the parliamentary landscape.</p>
+                  <div class="article-card__meta">
+                    <div class="article-card__author-avatar" aria-hidden="true">KD</div>
+                    <span>Keshav Dlamini</span>
+                    <span><time datetime="2026-04-18T10:00:00+02:00">1h ago</time></span>
+                    <span>6 min</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="article-card fade-in stagger-2" role="article">
+                <div class="article-card__img">
+                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#001f3f,#0055A5);">🏛️</div>
+                </div>
+                <div class="article-card__body">
+                  <div class="article-card__tag"><span class="tag tag--politics">USA</span></div>
+                  <h3 class="article-card__title">US Congress Passes Historic Bipartisan AI Regulation Bill Setting Global Precedent</h3>
+                  <p class="article-card__excerpt">Lawmakers reach rare agreement on sweeping legislation that mandates transparency, safety audits, and liability for AI systems.</p>
+                  <div class="article-card__meta">
+                    <div class="article-card__author-avatar" aria-hidden="true">AM</div>
+                    <span>Aisha Muema</span>
+                    <span><time datetime="2026-04-18T04:00:00+02:00">7h ago</time></span>
+                    <span>7 min</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- List articles -->
+            <div class="section-block">
+              <div class="article-list" role="list">
+                <article class="article-list-item fade-in" role="listitem article">
+                  <div class="article-list-item__img">
+                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#1a6b3a,#0a3d1e);">🌍</div>
+                  </div>
+                  <div class="article-list-item__body">
+                    <div class="article-list-item__tag"><span class="tag tag--world">Africa</span></div>
+                    <h3 class="article-list-item__title">SADC Leaders Approve Integrated Regional Army Task Force to Combat Insurgency</h3>
+                    <div class="article-list-item__meta">
+                      <span>ZiloNews Africa</span> · <time datetime="2026-04-18T01:00:00+02:00">10h ago</time> · 5 min read
+                    </div>
+                  </div>
+                </article>
+                <article class="article-list-item fade-in" role="listitem article">
+                  <div class="article-list-item__img">
+                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#8B0000,#4a0000);">🇪🇺</div>
+                  </div>
+                  <div class="article-list-item__body">
+                    <div class="article-list-item__tag"><span class="tag tag--politics">Europe</span></div>
+                    <h3 class="article-list-item__title">EU Elections See Record Turnout as Centre Coalition Holds Majority Against Far-Right Surge</h3>
+                    <div class="article-list-item__meta">
+                      <span>ZiloNews Europe</span> · <time datetime="2026-04-17T18:00:00+02:00">Yesterday</time> · 6 min read
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <!-- ---- WORLD AFFAIRS SECTION ---- -->
+          <section class="category-band" id="world" aria-label="World affairs news">
+            <div class="category-band__header">
+              <h2 class="category-band__title">
+                <span class="category-band__title-bar" style="background:var(--orange);" aria-hidden="true"></span>
+                🌍 World Affairs
+              </h2>
+              <a class="category-band__more" href="#" aria-label="More world affairs news">
+                More World
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+
+            <!-- Global Coverage Banner -->
+            <div class="global-banner fade-in" role="region" aria-label="Global coverage">
+              <div class="global-banner__tag">
+                <span class="tag tag--world">🌐 Global Coverage</span>
+              </div>
+              <h2 class="global-banner__title">Your World. Every Angle.</h2>
+              <p class="global-banner__sub">ZiloNews covers every region with correspondents on the ground, so you get the full story — not just the headline.</p>
+              <div class="global-banner__regions" role="list" aria-label="Browse by region">
+                <button class="global-banner__region-btn" aria-label="Filter: Africa">🌍 Africa</button>
+                <button class="global-banner__region-btn" aria-label="Filter: Middle East">🕌 Middle East</button>
+                <button class="global-banner__region-btn" aria-label="Filter: Asia Pacific">🌏 Asia Pacific</button>
+                <button class="global-banner__region-btn" aria-label="Filter: Europe">🇪🇺 Europe</button>
+                <button class="global-banner__region-btn" aria-label="Filter: Americas">🌎 Americas</button>
+                <button class="global-banner__region-btn" aria-label="Filter: Oceania">🌊 Oceania</button>
+              </div>
+            </div>
+
+            <div class="news-grid fade-in">
+              <article class="article-card" role="article">
+                <div class="article-card__img">
+                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#2d5016,#4a8c2a);">🌿</div>
+                </div>
+                <div class="article-card__body">
+                  <div class="article-card__tag"><span class="tag tag--science">Climate</span></div>
+                  <h3 class="article-card__title">Amazon Deforestation Hits 20-Year Low as Indigenous Monitoring Satellites Go Operational</h3>
+                  <p class="article-card__excerpt">A landmark achievement in environmental protection as real-time satellite data empowers indigenous communities.</p>
+                  <div class="article-card__meta">
+                    <div class="article-card__author-avatar" aria-hidden="true">RP</div>
+                    <span>Ravi Patel</span>
+                    <span><time datetime="2026-04-18T08:00:00+02:00">3h ago</time></span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="article-card" role="article">
+                <div class="article-card__img">
+                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#7B0010,#E8001D);">⚔️</div>
+                </div>
+                <div class="article-card__body">
+                  <div class="article-card__tag"><span class="tag tag--politics">Conflict</span></div>
+                  <h3 class="article-card__title">Ceasefire Agreement Signed in North Africa Conflict After Six Months of UN Mediation</h3>
+                  <p class="article-card__excerpt">A fragile peace holds as international observers deploy to monitor the historic ceasefire between rival factions.</p>
+                  <div class="article-card__meta">
+                    <div class="article-card__author-avatar" aria-hidden="true">FO</div>
+                    <span>Fatima Omar</span>
+                    <span><time datetime="2026-04-18T06:00:00+02:00">5h ago</time></span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="article-card" role="article">
+                <div class="article-card__img">
+                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#003c78,#001a38);">🚢</div>
+                </div>
+                <div class="article-card__body">
+                  <div class="article-card__tag"><span class="tag tag--business">Trade</span></div>
+                  <h3 class="article-card__title">Red Sea Shipping Corridor Fully Restores After Year-Long Disruption to Global Trade</h3>
+                  <p class="article-card__excerpt">International naval escort programme has successfully reopened one of the world's most critical commercial routes.</p>
+                  <div class="article-card__meta">
+                    <div class="article-card__author-avatar" aria-hidden="true">TC</div>
+                    <span>Thabo Cele</span>
+                    <span><time datetime="2026-04-17T22:00:00+02:00">Yesterday</time></span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- ---- BUSINESS SECTION ---- -->
+          <section class="category-band" id="business" aria-label="Business and finance news">
+            <div class="category-band__header">
+              <h2 class="category-band__title">
+                <span class="category-band__title-bar" style="background:#5A32C8;" aria-hidden="true"></span>
+                💼 Business &amp; Finance
+              </h2>
+              <a class="category-band__more" href="#" aria-label="More business news">
+                More Business
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+            <div class="section-block">
+              <div class="article-list" role="list">
+                <article class="article-list-item fade-in" role="listitem article">
+                  <div class="article-list-item__img">
+                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#f5a623,#c87000);">📈</div>
+                  </div>
+                  <div class="article-list-item__body">
+                    <div class="article-list-item__tag"><span class="tag tag--business">Markets</span></div>
+                    <h3 class="article-list-item__title">JSE All Share Index Surges to Record High as Mining and Tech Stocks Lead Rally</h3>
+                    <div class="article-list-item__meta">ZiloNews Markets · <time datetime="2026-04-18T11:00:00+02:00">30 min ago</time> · 4 min read</div>
+                  </div>
+                </article>
+                <article class="article-list-item fade-in" role="listitem article">
+                  <div class="article-list-item__img">
+                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#f7931a,#c16800);">₿</div>
+                  </div>
+                  <div class="article-list-item__body">
+                    <div class="article-list-item__tag"><span class="tag tag--business">Crypto</span></div>
+                    <h3 class="article-list-item__title">Bitcoin Crosses $120,000 as BlackRock ETF Records $4.2B Single-Day Inflow</h3>
+                    <div class="article-list-item__meta">ZiloNews Finance · <time datetime="2026-04-18T09:30:00+02:00">2h ago</time> · 3 min read</div>
+                  </div>
+                </article>
+                <article class="article-list-item fade-in" role="listitem article">
+                  <div class="article-list-item__img">
+                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#1a6b3a,#0a3d1e);">🏗️</div>
+                  </div>
+                  <div class="article-list-item__body">
+                    <div class="article-list-item__tag"><span class="tag tag--business">Africa</span></div>
+                    <h3 class="article-list-item__title">AfCFTA Reports $4.2 Trillion Intra-Africa Trade Milestone Ahead of 2030 Target</h3>
+                    <div class="article-list-item__meta">ZiloNews Africa Business · <time datetime="2026-04-18T07:00:00+02:00">4h ago</time> · 5 min read</div>
+                  </div>
+                </article>
+                <article class="article-list-item fade-in" role="listitem article">
+                  <div class="article-list-item__img">
+                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#0055A5,#001f3f);">💊</div>
+                  </div>
+                  <div class="article-list-item__body">
+                    <div class="article-list-item__tag"><span class="tag tag--health">Pharma</span></div>
+                    <h3 class="article-list-item__title">Pfizer Acquires Cape Town Biotech Startup for $8B — Africa's Largest Health Deal</h3>
+                    <div class="article-list-item__meta">ZiloNews Health Business · <time datetime="2026-04-17T16:00:00+02:00">Yesterday</time> · 6 min read</div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <!-- ---- SCIENCE &amp; HEALTH ---- -->
+          <section class="category-band" id="science" aria-label="Science and health news">
+            <div class="category-band__header">
+              <h2 class="category-band__title">
+                <span class="category-band__title-bar" style="background:#008040;" aria-hidden="true"></span>
+                🔬 Science &amp; Health
+              </h2>
+              <a class="category-band__more" href="#" aria-label="More science and health news">
+                More Science
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+
+            <div class="news-grid news-grid--2col">
+              <article class="article-card fade-in" role="article">
+                <div class="article-card__img">
+                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#008040,#003d1f);">🧬</div>
+                </div>
+                <div class="article-card__body">
+                  <div class="article-card__tag"><span class="tag tag--science">Genetics</span></div>
+                  <h3 class="article-card__title">Cape Town Researcher Wins Nobel Prize for CRISPR Cancer Immunity Breakthrough</h3>
+                  <p class="article-card__excerpt">Dr. Naledi Zuma's gene-editing technique successfully eliminates cancerous cells while leaving healthy tissue intact.</p>
+                  <div class="article-card__meta">
+                    <div class="article-card__author-avatar" aria-hidden="true">ZS</div>
+                    <span>ZiloNews Science</span>
+                    <span><time datetime="2026-04-18T10:30:00+02:00">1h ago</time></span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="article-card fade-in stagger-1" role="article">
+                <div class="article-card__img">
+                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#EC4899,#7B1850);">🏥</div>
+                </div>
+                <div class="article-card__body">
+                  <div class="article-card__tag"><span class="tag tag--health">Global Health</span></div>
+                  <h3 class="article-card__title">WHO Approves mRNA Malaria Vaccine That Shows 92% Efficacy in Sub-Saharan Trials</h3>
+                  <p class="article-card__excerpt">A major victory in the fight against malaria as the world's first highly effective mRNA vaccine clears regulatory approval.</p>
+                  <div class="article-card__meta">
+                    <div class="article-card__author-avatar" aria-hidden="true">MN</div>
+                    <span>Mpho Nkosi</span>
+                    <span><time datetime="2026-04-18T05:00:00+02:00">6h ago</time></span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- ---- SPORTS SECTION ---- -->
+          <section class="category-band" id="sports" aria-label="Sports news">
+            <div class="category-band__header">
+              <h2 class="category-band__title">
+                <span class="category-band__title-bar" style="background:#14B980;" aria-hidden="true"></span>
+                ⚽ Sports
+              </h2>
+              <a class="category-band__more" href="#" aria-label="More sports news">
+                More Sports
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+            <div class="section-block">
+              <div class="article-list" role="list">
+                <article class="article-list-item fade-in" role="listitem article">
+                  <div class="article-list-item__img">
+                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#14B980,#0a6b46);">⚽</div>
+                  </div>
+                  <div class="article-list-item__body">
+                    <div class="article-list-item__tag"><span class="tag tag--sports">Football</span></div>
+                    <h3 class="article-list-item__title">Bafana Bafana Qualify for 2028 World Cup After Historic Win Against Nigeria</h3>
+                    <div class="article-list-item__meta">ZiloNews Sports · <time datetime="2026-04-18T22:00:00+02:00">Just now</time> · 3 min read</div>
+                  </div>
+                </article>
+                <article class="article-list-item fade-in" role="listitem article">
+                  <div class="article-list-item__img">
+                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#D97706,#7B4000);">🏏</div>
+                  </div>
+                  <div class="article-list-item__body">
+                    <div class="article-list-item__tag"><span class="tag tag--sports">Cricket</span></div>
+                    <h3 class="article-list-item__title">Proteas Beat Australia by 8 Wickets in Stunning T20 World Cup Final Run Chase</h3>
+                    <div class="article-list-item__meta">ZiloNews Cricket · <time datetime="2026-04-17T23:00:00+02:00">Yesterday</time> · 4 min read</div>
+                  </div>
+                </article>
+                <article class="article-list-item fade-in" role="listitem article">
+                  <div class="article-list-item__img">
+                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#0055A5,#001f3f);">🎾</div>
+                  </div>
+                  <div class="article-list-item__body">
+                    <div class="article-list-item__tag"><span class="tag tag--sports">Tennis</span></div>
+                    <h3 class="article-list-item__title">South African Teenager Yanda Mokoena Reaches French Open Quarterfinal at 17</h3>
+                    <div class="article-list-item__meta">ZiloNews Tennis · <time datetime="2026-04-17T14:00:00+02:00">Yesterday</time> · 3 min read</div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <!-- ---- OPINION / EDITORIAL ---- -->
+          <section class="category-band" id="culture" aria-label="Opinion and culture">
+            <div class="category-band__header">
+              <h2 class="category-band__title">
+                <span class="category-band__title-bar" style="background:#D97706;" aria-hidden="true"></span>
+                ✍️ Opinion &amp; Culture
+              </h2>
+              <a class="category-band__more" href="#" aria-label="More opinion pieces">
+                More Opinion
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+
+            <div class="mag-layout">
+              <article class="mag-feature fade-in" role="article" aria-label="Featured opinion piece">
+                <div class="mag-feature__bg" aria-hidden="true"></div>
+                <div class="mag-feature__overlay" aria-hidden="true"></div>
+                <div class="mag-feature__content">
+                  <span class="tag tag--culture">Opinion</span>
+                  <h2 class="mag-feature__title">Africa's AI Moment: Why the Continent Must Lead, Not Follow, the Global Technology Revolution</h2>
+                  <div class="mag-feature__meta">
+                    <span>By Dr. Zanele Mokoena</span> · <time datetime="2026-04-18T08:00:00+02:00">Today</time> · 10 min read
+                  </div>
+                </div>
+              </article>
+
+              <div class="mag-sidebar-articles">
+                <article class="opinion-card fade-in stagger-1" role="article">
+                  <div class="opinion-card__avatar" aria-hidden="true">KZ</div>
+                  <div class="opinion-card__body">
+                    <div class="opinion-card__author">Kwame Acheampong</div>
+                    <div class="opinion-card__role">Senior Political Analyst</div>
+                    <p class="opinion-card__title">Why the African Union's Digital Currency Plan Is Both Bold and Necessary</p>
+                  </div>
+                </article>
+                <article class="opinion-card fade-in stagger-2" role="article">
+                  <div class="opinion-card__avatar" aria-hidden="true">NV</div>
+                  <div class="opinion-card__body">
+                    <div class="opinion-card__author">Nomsa Vilakazi</div>
+                    <div class="opinion-card__role">Technology Correspondent</div>
+                    <p class="opinion-card__title">The Hidden Cost of AI: Why We Must Confront Digital Colonialism Now</p>
+                  </div>
+                </article>
+                <article class="opinion-card fade-in stagger-3" role="article">
+                  <div class="opinion-card__avatar" aria-hidden="true">BO</div>
+                  <div class="opinion-card__body">
+                    <div class="opinion-card__author">Ben Osei</div>
+                    <div class="opinion-card__role">Economics Commentator</div>
+                    <p class="opinion-card__title">Cryptocurrency in Africa: Financial Liberation or a New Form of Dependency?</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <!-- ---- VIDEO SECTION ---- -->
+          <section class="category-band" id="videos" aria-label="Video news">
+            <div class="category-band__header">
+              <h2 class="category-band__title">
+                <span class="category-band__title-bar" style="background:var(--red);" aria-hidden="true"></span>
+                🎬 Video News
+              </h2>
+              <a class="category-band__more" href="#" aria-label="More video news">
+                More Videos
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+
+            <div class="video-grid">
+              <article class="video-card fade-in stagger-1" role="article" aria-label="Video: AI Summit coverage">
+                <div class="video-card__thumb" aria-hidden="true">
+                  <div class="video-card__thumb-bg" style="background:linear-gradient(135deg,#0055A5,#001a38);display:flex;align-items:center;justify-content:center;font-size:48px;">🤖</div>
+                </div>
+                <div class="video-card__thumb-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+                <span class="video-card__duration" aria-label="Video duration: 12 minutes 34 seconds">12:34</span>
+                <div class="video-card__body">
+                  <h3 class="video-card__title">LIVE COVERAGE: Inside the Geneva AI Safety Summit — What World Leaders Agreed</h3>
+                  <div class="video-card__meta">
+                    <span>ZiloNews Live</span> · <span>2h ago</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="video-card fade-in stagger-2" role="article" aria-label="Video: Nobel Prize interview">
+                <div class="video-card__thumb" aria-hidden="true">
+                  <div class="video-card__thumb-bg" style="background:linear-gradient(135deg,#008040,#002a15);display:flex;align-items:center;justify-content:center;font-size:48px;">🧬</div>
+                </div>
+                <div class="video-card__thumb-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+                <span class="video-card__duration" aria-label="Video duration: 8 minutes 15 seconds">8:15</span>
+                <div class="video-card__body">
+                  <h3 class="video-card__title">EXCLUSIVE: Nobel Laureate Dr. Naledi Zuma on Her Cancer-Busting CRISPR Discovery</h3>
+                  <div class="video-card__meta">
+                    <span>ZiloNews Science</span> · <span>3h ago</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="video-card fade-in stagger-3" role="article" aria-label="Video: Bafana qualification highlights">
+                <div class="video-card__thumb" aria-hidden="true">
+                  <div class="video-card__thumb-bg" style="background:linear-gradient(135deg,#14B980,#0a4030);display:flex;align-items:center;justify-content:center;font-size:48px;">⚽</div>
+                </div>
+                <div class="video-card__thumb-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+                <span class="video-card__duration" aria-label="Video duration: 5 minutes 48 seconds">5:48</span>
+                <div class="video-card__body">
+                  <h3 class="video-card__title">HIGHLIGHTS: Bafana Bafana's Historic World Cup Qualification — Every Goal</h3>
+                  <div class="video-card__meta">
+                    <span>ZiloNews Sports</span> · <span>Just now</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- Load More -->
+          <button class="load-more fade-in" id="load-more-btn" aria-label="Load more news articles">
+            Load More Articles ↓
+          </button>
+        </div>
+        <!-- ========== END Main Content ========== -->
+
+        <!-- ========== RIGHT: Sidebar ========== -->
+        <aside class="sidebar" aria-label="Sidebar: trending, newsletter, and weather">
+
+          <!-- Trending -->
+          <div class="sidebar__widget fade-in">
+            <h2 class="section-title">🔥 Trending Now</h2>
+            <div class="trending-list" role="list">
+              <div class="trending-item" role="listitem">
+                <span class="trending-item__num" aria-label="Number 1 trending">01</span>
+                <div class="trending-item__body">
+                  <div class="trending-item__tag"><span class="tag tag--tech">AI</span></div>
+                  <p class="trending-item__title">Global AI Summit's Hidden Clause That Could Reshape the Internet</p>
+                  <div class="trending-item__time"><time datetime="2026-04-18T08:00:00+02:00">3h ago</time></div>
+                </div>
+              </div>
+              <div class="trending-item" role="listitem">
+                <span class="trending-item__num" aria-label="Number 2 trending">02</span>
+                <div class="trending-item__body">
+                  <div class="trending-item__tag"><span class="tag tag--politics">Africa</span></div>
+                  <p class="trending-item__title">African Union's Bold Digital Currency Proposal Divides Economists</p>
+                  <div class="trending-item__time"><time datetime="2026-04-18T06:00:00+02:00">5h ago</time></div>
+                </div>
+              </div>
+              <div class="trending-item" role="listitem">
+                <span class="trending-item__num" aria-label="Number 3 trending">03</span>
+                <div class="trending-item__body">
+                  <div class="trending-item__tag"><span class="tag tag--business">Crypto</span></div>
+                  <p class="trending-item__title">Bitcoin at $120K: Is This the Start of the Next Supercycle?</p>
+                  <div class="trending-item__time"><time datetime="2026-04-18T09:00:00+02:00">2h ago</time></div>
+                </div>
+              </div>
+              <div class="trending-item" role="listitem">
+                <span class="trending-item__num" aria-label="Number 4 trending">04</span>
+                <div class="trending-item__body">
+                  <div class="trending-item__tag"><span class="tag tag--sports">Football</span></div>
+                  <p class="trending-item__title">Bafana Bafana 2028 World Cup Qualification: Full Analysis</p>
+                  <div class="trending-item__time"><time datetime="2026-04-18T22:00:00+02:00">Just now</time></div>
+                </div>
+              </div>
+              <div class="trending-item" role="listitem">
+                <span class="trending-item__num" aria-label="Number 5 trending">05</span>
+                <div class="trending-item__body">
+                  <div class="trending-item__tag"><span class="tag tag--science">Nobel</span></div>
+                  <p class="trending-item__title">Cape Town's Nobel Laureate: The Woman Who May Have Beaten Cancer</p>
+                  <div class="trending-item__time"><time datetime="2026-04-18T10:30:00+02:00">1h ago</time></div>
+                </div>
+              </div>
+              <div class="trending-item" role="listitem">
+                <span class="trending-item__num" aria-label="Number 6 trending">06</span>
+                <div class="trending-item__body">
+                  <div class="trending-item__tag"><span class="tag tag--health">WHO</span></div>
+                  <p class="trending-item__title">Malaria mRNA Vaccine: A Turning Point for Sub-Saharan Africa</p>
+                  <div class="trending-item__time"><time datetime="2026-04-18T05:00:00+02:00">6h ago</time></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="newsletter-widget fade-in stagger-1">
+            <div class="newsletter-widget__icon" aria-hidden="true">📰</div>
+            <h2 class="newsletter-widget__title">Daily Briefing</h2>
+            <p class="newsletter-widget__sub">Get the top 5 stories delivered to your inbox every morning. No spam, ever.</p>
+            <form class="newsletter-widget__form" id="newsletter-form" action="#" method="post" aria-label="Newsletter subscription">
+              <label for="newsletter-email" class="sr-only">Your email address</label>
+              <input
+                class="newsletter-widget__input"
+                id="newsletter-email"
+                name="email"
+                type="email"
+                placeholder="Your email address"
+                required
+                autocomplete="email"
+                aria-required="true"
+              />
+              <button class="newsletter-widget__btn" type="submit" aria-label="Subscribe to ZiloNews newsletter">
+                Subscribe Free →
+              </button>
+            </form>
+          </div>
+
+          <!-- Weather -->
+          <div class="sidebar__widget weather-widget fade-in stagger-2" aria-label="Current weather">
+            <h2 class="section-title">🌤 Weather</h2>
+            <div class="weather-widget__city" id="weather-city" aria-live="polite">Johannesburg, ZA</div>
+            <div class="weather-widget__temp" id="weather-temp" aria-live="polite">22°C</div>
+            <div class="weather-widget__desc" id="weather-desc" aria-live="polite">⛅ Partly Cloudy</div>
+            <div class="weather-widget__grid" role="list" aria-label="Weather details">
+              <div class="weather-widget__item" role="listitem">
+                <div class="weather-widget__item-label">Humidity</div>
+                <div class="weather-widget__item-val">61%</div>
+              </div>
+              <div class="weather-widget__item" role="listitem">
+                <div class="weather-widget__item-label">Wind</div>
+                <div class="weather-widget__item-val">14 km/h</div>
+              </div>
+              <div class="weather-widget__item" role="listitem">
+                <div class="weather-widget__item-label">UV Index</div>
+                <div class="weather-widget__item-val">6 High</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ad Placeholder -->
+          <div class="ad-widget fade-in stagger-3" role="complementary" aria-label="Advertisement space">
+            <div class="ad-widget__label">Advertisement</div>
+            <div class="ad-widget__size">300 × 250</div>
+          </div>
+
+          <!-- Follow Us -->
+          <div class="sidebar__widget fade-in stagger-4">
+            <h2 class="section-title">📲 Follow ZiloNews</h2>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px;">
+              <a href="https://twitter.com/ZiloNews" target="_blank" rel="noopener noreferrer" class="footer-col__link" style="font-size:14px;font-weight:600;color:var(--gray-800);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                𝕏 / Twitter
+              </a>
+              <a href="https://facebook.com/ZiloNews" target="_blank" rel="noopener noreferrer" class="footer-col__link" style="font-size:14px;font-weight:600;color:var(--gray-800);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                Facebook
+              </a>
+              <a href="https://instagram.com/ZiloNews" target="_blank" rel="noopener noreferrer" class="footer-col__link" style="font-size:14px;font-weight:600;color:var(--gray-800);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="url(#ig-grad)" aria-hidden="true">
+                  <defs><linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#F58529"/><stop offset="50%" style="stop-color:#DD2A7B"/><stop offset="100%" style="stop-color:#515BD4"/></linearGradient></defs>
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                </svg>
+                Instagram
+              </a>
+              <a href="https://youtube.com/@ZiloNews" target="_blank" rel="noopener noreferrer" class="footer-col__link" style="font-size:14px;font-weight:600;color:var(--gray-800);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FF0000" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                YouTube
+              </a>
+            </div>
+          </div>
+
+          <!-- Second Ad Slot -->
+          <div class="ad-widget fade-in" style="min-height:600px;" role="complementary" aria-label="Advertisement space">
+            <div class="ad-widget__label">Advertisement</div>
+            <div class="ad-widget__size">300 × 600</div>
+          </div>
+        </aside>
+        <!-- ========== END Sidebar ========== -->
+
+      </div>
+    </div>
+    <!-- ============================================================ END content-grid ============================================================ -->
+
+  </main>
+
+  <!-- ============================================================
+       SITE FOOTER
+  ============================================================ -->
+  <footer class="site-footer" role="contentinfo" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="ZiloNews logo" width="60" height="60" loading="lazy" />
+          <div class="footer-brand__name">Zilo<span>News</span></div>
+          <p class="footer-brand__desc">
+            ZiloNews is your trusted source for breaking news, in-depth analysis, and real-time updates on technology, politics, world affairs, business, science, sports, health, and culture — from across the globe.
+          </p>
+          <div class="footer-social" aria-label="Social media">
+            <a class="footer-social__link" href="https://twitter.com/ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a class="footer-social__link" href="https://facebook.com/ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a class="footer-social__link" href="https://instagram.com/ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </a>
+            <a class="footer-social__link" href="https://youtube.com/@ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a class="footer-social__link" href="https://linkedin.com/company/ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <nav class="footer-col" aria-label="Footer: Quick links">
+          <h3 class="footer-col__title">Quick Links</h3>
+          <div class="footer-col__links">
+            <a class="footer-col__link" href="/">Home</a>
+            <a class="footer-col__link" href="#technology">Technology</a>
+            <a class="footer-col__link" href="#politics">Politics</a>
+            <a class="footer-col__link" href="#world">World Affairs</a>
+            <a class="footer-col__link" href="#business">Business</a>
+            <a class="footer-col__link" href="#science">Science</a>
+            <a class="footer-col__link" href="#sports">Sports</a>
+            <a class="footer-col__link" href="#culture">Culture</a>
+            <a class="footer-col__link" href="#videos">Video News</a>
+          </div>
+        </nav>
+
+        <!-- Company -->
+        <nav class="footer-col" aria-label="Footer: Company links">
+          <h3 class="footer-col__title">Company</h3>
+          <div class="footer-col__links">
+            <a class="footer-col__link" href="#">About ZiloNews</a>
+            <a class="footer-col__link" href="#">Our Journalists</a>
+            <a class="footer-col__link" href="#">Editorial Standards</a>
+            <a class="footer-col__link" href="#">Advertise With Us</a>
+            <a class="footer-col__link" href="#">Press Room</a>
+            <a class="footer-col__link" href="#">RSS Feeds</a>
+            <a class="footer-col__link" href="#">Careers</a>
+            <a class="footer-col__link" href="#">Contact Us</a>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-bottom__copy">
+          © <span id="copy-year">2026</span> ZiloNews. All rights reserved. |
+          <a href="#">Privacy Policy</a> ·
+          <a href="#">Terms of Use</a> ·
+          <a href="#">Cookie Policy</a>
+        </p>
+        <nav class="footer-bottom__links" aria-label="Footer legal links">
+          <a href="#">Corrections Policy</a>
+          <a href="#">Fact-Checking</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top of page" title="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- Hidden utility class for screen readers -->
+  <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
+
+  <!-- Update copyright year dynamically -->
+  <script>
+    var cy = document.getElementById('copy-year');
+    if (cy) cy.textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Main JS (deferred for performance) -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>

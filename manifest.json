@@ -1,0 +1,29 @@
+{
+  "name": "ZiloNews — Breaking News",
+  "short_name": "ZiloNews",
+  "description": "Latest breaking news: tech, politics, world affairs, business, science, sports, and culture.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111418",
+  "theme_color": "#E8001D",
+  "icons": [
+    {
+      "src": "assets/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["news", "politics", "technology"],
+  "lang": "en",
+  "dir": "ltr",
+  "orientation": "any",
+  "scope": "/",
+  "screenshots": []
+}
