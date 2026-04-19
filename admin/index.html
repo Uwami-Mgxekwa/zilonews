@@ -34,6 +34,10 @@
                 <li style="margin-bottom: 15px;"><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none; display: flex; align-items: center; gap: 10px;"><i data-lucide="settings"></i> Settings</a></li>
             </ul>
         </nav>
+        <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+            <label style="font-size: 0.7rem; color: #888;">MASTER KEY (FOR UPLOADS)</label>
+            <input type="password" id="admin-master-key" placeholder="Paste Master Key here..." style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 8px; font-size: 0.8rem; margin-top: 5px;">
+        </div>
     </aside>
 
     <main class="main-content">
@@ -74,8 +78,9 @@
                     <textarea id="story-content" rows="10" placeholder="Full article content..."></textarea>
                 </div>
                 <div class="form-group">
-                    <label>Image URL</label>
-                    <input type="text" id="story-image" placeholder="https://example.com/image.jpg">
+                    <label>Article Image</label>
+                    <input type="file" id="story-image-file" accept="image/*">
+                    <p style="font-size: 0.75rem; color: #666; margin-top: 5px;">Or provide a URL if you prefer: <input type="text" id="story-image-url" placeholder="https://..." style="width: auto; padding: 4px; border: none; border-bottom: 1px solid #ddd;"></p>
                 </div>
                 <button type="submit" class="btn"><i data-lucide="send"></i> Publish Story</button>
             </form>
@@ -149,6 +154,13 @@
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = e.target.querySelector('button');
+            const masterKey = document.getElementById('admin-master-key').value.trim();
+            
+            // Apply Master Key to Parse globally if provided
+            if (masterKey) {
+                Parse.masterKey = masterKey;
+            }
+
             const originalBtnHtml = btn.innerHTML;
             btn.textContent = 'Publishing...';
             btn.disabled = true;
@@ -161,10 +173,22 @@
             story.set("author", document.getElementById('story-author').value);
             story.set("excerpt", document.getElementById('story-excerpt').value);
             story.set("content", document.getElementById('story-content').value);
-            story.set("imageUrl", document.getElementById('story-image').value);
+
+            // Handle Image (File or URL)
+            const fileInput = document.getElementById('story-image-file');
+            const urlInput = document.getElementById('story-image-url');
 
             try {
-                await story.save();
+                if (fileInput.files.length > 0) {
+                    const file = fileInput.files[0];
+                    const parseFile = new Parse.File(file.name, file);
+                    await parseFile.save({ useMasterKey: !!masterKey });
+                    story.set("image", parseFile);
+                } else if (urlInput.value) {
+                    story.set("imageUrl", urlInput.value);
+                }
+
+                await story.save(null, { useMasterKey: !!masterKey });
                 alert("Story published successfully!");
                 form.reset();
                 loadStories();

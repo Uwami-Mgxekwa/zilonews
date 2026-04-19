@@ -274,55 +274,25 @@
             <a class="main-nav__link active" href="/" aria-current="page">Home</a>
           </li>
           <li class="main-nav__item">
-            <a class="main-nav__link" href="pages/technology.html" aria-haspopup="true" aria-expanded="false">
+            <a class="main-nav__link" href="pages/technology.html" >
               Tech
-              <i data-lucide="chevron-down"></i>
+              
             </a>
-            <div class="nav-dropdown" role="menu" aria-label="Technology submenu">
-              <a class="nav-dropdown__link" href="#" role="menuitem">
-                <i data-lucide="cpu"></i>
-                Artificial Intelligence
-              </a>
-              <a class="nav-dropdown__link" href="#" role="menuitem">
-                <i data-lucide="shield-check"></i>
-                Cybersecurity
-              </a>
-              <a class="nav-dropdown__link" href="#" role="menuitem">
-                <i data-lucide="rocket"></i>
-                Space &amp; Science
-              </a>
-              <a class="nav-dropdown__link" href="#" role="menuitem">
-                <i data-lucide="smartphone"></i>
-                Gadgets
-              </a>
-            </div>
+            
           </li>
           <li class="main-nav__item">
-            <a class="main-nav__link" href="pages/politics.html" aria-haspopup="true" aria-expanded="false">
+            <a class="main-nav__link" href="pages/politics.html" >
               Politics
-              <i data-lucide="chevron-down"></i>
+              
             </a>
-            <div class="nav-dropdown" role="menu" aria-label="Politics submenu">
-              <a class="nav-dropdown__link" href="#" role="menuitem">Global Politics</a>
-              <a class="nav-dropdown__link" href="#" role="menuitem">Africa</a>
-              <a class="nav-dropdown__link" href="#" role="menuitem">USA &amp; Americas</a>
-              <a class="nav-dropdown__link" href="#" role="menuitem">Europe</a>
-              <a class="nav-dropdown__link" href="#" role="menuitem">Middle East</a>
-              <a class="nav-dropdown__link" href="#" role="menuitem">Elections</a>
-            </div>
+            
           </li>
           <li class="main-nav__item">
-            <a class="main-nav__link" href="pages/world.html" aria-haspopup="true" aria-expanded="false">
+            <a class="main-nav__link" href="pages/world.html" >
               World
-              <i data-lucide="chevron-down"></i>
+              
             </a>
-            <div class="nav-dropdown" role="menu" aria-label="World submenu">
-              <a class="nav-dropdown__link" href="#" role="menuitem">Africa</a>
-              <a class="nav-dropdown__link" href="#" role="menuitem">Asia Pacific</a>
-              <a class="nav-dropdown__link" href="#" role="menuitem">Europe</a>
-              <a class="nav-dropdown__link" href="#" role="menuitem">Americas</a>
-              <a class="nav-dropdown__link" href="#" role="menuitem">Middle East</a>
-            </div>
+            
           </li>
           <li class="main-nav__item">
             <a class="main-nav__link" href="pages/business.html">Business</a>
@@ -541,6 +511,14 @@
         <!-- ========== LEFT: Main Content Area ========== -->
         <div class="main-content">
           
+          <!-- Latest News Section -->
+          <section class="section-block fade-in" id="latest-section">
+            <h2 class="section-title">✨ Latest Stories</h2>
+            <div class="news-grid" id="latest-news-container">
+              <div class="loading-placeholder">Discovering what's new...</div>
+            </div>
+          </section>
+
           <!-- Technology Section -->
           <section class="section-block fade-in" id="tech-section">
             <h2 class="section-title">💻 Technology</h2>
@@ -828,6 +806,8 @@
 
   <!-- API & SDKs -->
   <script src="js/api.js"></script>
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js"></script>
+  <script src="https://unpkg.com/lucide@0.395.0"></script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>

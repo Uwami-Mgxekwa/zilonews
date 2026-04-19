@@ -128,44 +128,120 @@
      DYNAMIC NEWS LOADING
   ================================================================ */
   async function loadNews() {
-    if (typeof API === 'undefined') return;
+    if (typeof API === 'undefined') {
+        console.warn('ZiloNews: API not found. News will not load.');
+        return;
+    }
     const category = document.body.dataset.category || 'Main';
+    console.log(`ZiloNews: Starting news load for [${category}]`);
 
     async function render(sel, cat = null, limit = 6) {
-        const container = $(sel) || $('#category-news-container');
+        const container = (typeof sel === 'string') ? $(sel) : sel;
         if (!container) return;
 
-        const stories = await API.fetchStories(cat, limit);
-        if (stories?.length) {
-            container.innerHTML = '';
-            stories.forEach(s => {
-                const art = document.createElement('article');
-                art.className = 'article-card fade-in visible';
-                art.innerHTML = `
-                    <div class="article-card__img"><img src="${s.image}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
-                    <div class="article-card__body">
-                        <div class="article-card__tag"><span class="tag tag--${s.category.toLowerCase()}">${s.category}</span></div>
-                        <h3 class="article-card__title">${s.title}</h3>
-                        <p class="article-card__excerpt">${s.excerpt}</p>
-                        <div class="article-card__meta">
-                            <div class="article-card__author-avatar" aria-hidden="true">${s.author.substring(0,2).toUpperCase()}</div>
-                            <span>${s.author}</span>
-                            <span><i data-lucide="clock" style="width:14px;height:14px;"></i> <time>${new Date(s.date).toLocaleDateString()}</time></span>
+        try {
+            const stories = await API.fetchStories(cat, limit);
+            const parentSection = container.closest('.section-block');
+            
+            if (stories?.length) {
+                if (parentSection) parentSection.style.display = 'block';
+                container.innerHTML = '';
+                stories.forEach(s => {
+                    const art = document.createElement('article');
+                    art.className = 'article-card fade-in visible';
+                    art.innerHTML = `
+                        <div class="article-card__img"><img src="${s.image}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
+                        <div class="article-card__body">
+                            <div class="article-card__tag"><span class="tag tag--${s.category.toLowerCase()}">${s.category}</span></div>
+                            <h3 class="article-card__title">${s.title}</h3>
+                            <p class="article-card__excerpt">${s.excerpt}</p>
+                            <div class="article-card__meta">
+                                <div class="article-card__author-avatar" aria-hidden="true">${s.author.substring(0,2).toUpperCase()}</div>
+                                <span>${s.author}</span>
+                                <span><i data-lucide="clock" style="width:14px;height:14px;"></i> <time>${new Date(s.date).toLocaleDateString()}</time></span>
+                            </div>
                         </div>
-                    </div>
-                `;
-                container.appendChild(art);
-            });
+                    `;
+                    container.appendChild(art);
+                });
+            } else {
+                // Hide empty sections on homepage, show helper on category pages
+                if (document.body.dataset.category === 'Main' && parentSection) {
+                    parentSection.style.display = 'none';
+                } else {
+                    container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--gray-400); font-size: 0.9rem;"><i data-lucide="inbox" style="width:32px;height:32px;display:block;margin:0 auto 10px;opacity:0.5;"></i> No ${cat || 'latest'} stories yet. Start posting!</div>`;
+                }
+            }
             initIcons();
-        } else {
-            container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--gray-400);"><i data-lucide="inbox" style="width:48px;height:48px;display:block;margin:0 auto 15px;"></i> No stories found in ${cat || 'all'} categories.</div>`;
+        } catch (e) {
+            console.error(`ZiloNews: Error rendering section ${cat}:`, e);
+        }
+    }
+
+    // Hero Loader
+    async function loadHero() {
+        const heroGrid = $('.hero__grid');
+        if (!heroGrid) return;
+
+        try {
+            const stories = await API.fetchStories(null, 3);
+            if (stories?.length) {
+                console.log(`ZiloNews: Hero loaded with ${stories.length} stories.`);
+                const main = stories[0];
+                const heroMain = $('.hero__main');
+                if (heroMain) {
+                    heroMain.style.backgroundImage = `url(${main.image})`;
+                    heroMain.style.backgroundSize = 'cover';
+                    heroMain.innerHTML = `
+                        <div class="hero__main-overlay" aria-hidden="true"></div>
+                        <div class="hero__main-content">
+                            <span class="tag tag--${main.category.toLowerCase()}">${main.category}</span>
+                            <h1 class="hero__main-title">${main.title}</h1>
+                            <div class="hero__main-meta">
+                                <span><i data-lucide="user"></i> ${main.author}</span>
+                                <span><i data-lucide="clock"></i> <time>${new Date(main.date).toLocaleDateString()}</time></span>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                const side = stories.slice(1);
+                const heroSide = $('.hero__side');
+                if (heroSide) {
+                    heroSide.innerHTML = '';
+                    side.forEach((s, i) => {
+                        const card = document.createElement('article');
+                        card.className = `hero__card fade-in stagger-${i+1} visible`;
+                        card.style.backgroundImage = `url(${s.image})`;
+                        card.style.backgroundSize = 'cover';
+                        card.innerHTML = `
+                            <div class="hero__card-overlay" aria-hidden="true"></div>
+                            <div class="hero__card-content">
+                                <span class="tag tag--${s.category.toLowerCase()}">${s.category}</span>
+                                <h2 class="hero__card-title">${s.title}</h2>
+                                <div class="hero__card-meta"><time>${new Date(s.date).toLocaleDateString()}</time></div>
+                            </div>
+                        `;
+                        heroSide.appendChild(card);
+                    });
+                }
+            } else {
+                console.log('ZiloNews: No stories found for Hero.');
+                const mainHero = $('.hero__main');
+                if (mainHero) mainHero.innerHTML = '<div style="padding:40px;text-align:center;"><h3>No stories published yet.</h3><p>Go to the admin panel to post your first story!</p></div>';
+            }
             initIcons();
+        } catch (e) {
+            console.error("ZiloNews: Hero load failed:", e);
         }
     }
 
     if (category !== 'Main') {
-        await render('#category-news-container', category, 12);
+        const container = $('#category-news-container') || $('.news-grid');
+        await render(container, category, 12);
     } else {
+        await loadHero();
+        await render('#latest-news-container', null, 6);
         await render('#tech-news-container', 'Technology', 3);
         await render('#politics-news-container', 'Politics', 3);
         await render('#science-news-container', 'Science', 3);
@@ -183,5 +259,10 @@
     onScroll();
   });
 
-  console.log('ZiloNews Infrastructure Ready.');
+  console.log(
+    '%cZiloNews Infrastructure 🌍 %cPowered by %cBrelinx',
+    'color:#E8001D; font-weight:800; font-size:14px;',
+    'color:#6b7280; font-weight:400; font-size:12px;',
+    'color:#14B980; font-weight:800; font-size:14px;'
+  );
 })();
