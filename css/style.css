@@ -556,10 +556,37 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; }
   transition: transform 0.6s ease;
 }
 .hero__main:hover .hero__main-bg { transform: scale(1.04); }
+
+/* Hero image tag (replaces background-image approach) */
+.hero__main-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease;
+  z-index: 0;
+}
+.hero__main:hover .hero__main-img { transform: scale(1.04); }
+
+/* Hero side card image tag */
+.hero__card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+  z-index: 0;
+}
+.hero__card:hover .hero__card-img { transform: scale(1.06); }
 .hero__main-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(10,12,16,.92) 0%, rgba(10,12,16,.3) 55%, transparent 100%);
+  z-index: 1;
 }
 .hero__main-content {
   position: relative;
@@ -614,6 +641,7 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; }
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,.82) 0%, transparent 60%);
+  z-index: 1;
 }
 .hero__card-content {
   position: relative;
@@ -1481,4 +1509,208 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; }
     transition-duration: 0.01ms !important;
   }
   .ticker__items { animation: none; }
+}
+
+/* ================================================================
+   IMAGE PROTECTION
+   Prevents right-click save, drag, and iOS long-press.
+   pointer-events stays on so hover/click on parent elements works.
+================================================================ */
+img {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none; /* iOS long-press save menu */
+  -webkit-user-drag: none;
+}
+
+/* Hero and card elements must be clickable */
+.hero__main,
+.hero__card,
+.article-card {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* ================================================================
+   ARTICLE READER MODAL
+================================================================ */
+#article-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+#article-modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+.article-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 12, 16, 0.82);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.article-modal__panel {
+  position: relative;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 780px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  transform: translateY(16px);
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  scroll-behavior: smooth;
+}
+#article-modal.open .article-modal__panel {
+  transform: translateY(0);
+}
+.article-modal__close {
+  position: sticky;
+  top: 16px;
+  float: right;
+  margin: 16px 16px 0 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-800);
+  z-index: 10;
+  transition: background var(--transition), color var(--transition);
+  flex-shrink: 0;
+}
+.article-modal__close:hover {
+  background: var(--red);
+  color: var(--white);
+}
+.article-modal__content {
+  padding: 0 36px 40px;
+  clear: both;
+}
+.article-modal__meta-top {
+  padding-top: 8px;
+  margin-bottom: 16px;
+}
+.article-modal__cat-link {
+  text-decoration: none;
+  transition: opacity var(--transition);
+}
+.article-modal__cat-link:hover { opacity: 0.8; }
+.article-modal__title {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 4vw, 34px);
+  color: var(--dark);
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+.article-modal__byline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--gray-400);
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--gray-100);
+}
+.article-modal__author {
+  font-weight: 600;
+  color: var(--dark);
+}
+.article-modal__date {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.article-modal__read-time {
+  background: var(--gray-100);
+  padding: 2px 10px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gray-600);
+}
+.article-modal__img-wrap {
+  margin: 0 -36px 28px;
+  overflow: hidden;
+  max-height: 420px;
+}
+.article-modal__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+.article-modal__body {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text);
+}
+.article-modal__body p { margin-bottom: 1.2em; }
+
+.article-modal__footer {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 2px solid var(--gray-100);
+}
+.article-modal__cat-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--red);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: background var(--transition), transform var(--transition);
+}
+.article-modal__cat-btn:hover {
+  background: var(--red-dark);
+  transform: translateY(-1px);
+}
+
+/* Article card image wrapper fix */
+.article-card__img-wrap {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--gray-100);
+}
+.article-card__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+  display: block;
+}
+.article-card:hover .article-card__img-wrap img {
+  transform: scale(1.06);
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  #article-modal { padding: 0; align-items: flex-end; }
+  .article-modal__panel {
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    max-height: 92vh;
+  }
+  .article-modal__content { padding: 0 20px 32px; }
+  .article-modal__img-wrap { margin: 0 -20px 24px; }
 }
