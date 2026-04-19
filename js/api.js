@@ -24,7 +24,6 @@ const API = {
         
         try {
             const results = await query.find();
-            console.log(`ZiloNews API: fetchStories(${category || 'all'}, ${limit}) → ${results.length} results`);
             return results.map(story => ({
                 id: story.id,
                 title: story.get("title"),
