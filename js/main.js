@@ -165,8 +165,9 @@
                     container.appendChild(art);
                 });
             } else {
-                // Hide empty sections on homepage, show helper on category pages
-                if (document.body.dataset.category === 'Main' && parentSection) {
+                // Only hide per-category sections (Tech, Science, etc.) when empty on homepage
+                // Never hide the "Latest Stories" section (cat === null means all stories)
+                if (document.body.dataset.category === 'Main' && parentSection && cat !== null) {
                     parentSection.style.display = 'none';
                 } else {
                     container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--gray-400); font-size: 0.9rem;"><i data-lucide="inbox" style="width:32px;height:32px;display:block;margin:0 auto 10px;opacity:0.5;"></i> No ${cat || 'latest'} stories yet. Start posting!</div>`;
