@@ -190,13 +190,18 @@
                 const main = stories[0];
                 const heroMain = $('.hero__main');
                 if (heroMain) {
-                    heroMain.style.backgroundImage = `url(${main.image})`;
-                    heroMain.style.backgroundSize = 'cover';
+                    // Only set background if we have a real image (not the fallback logo)
+                    if (main.image && !main.image.includes('logo.png')) {
+                        heroMain.style.backgroundImage = `url(${main.image})`;
+                        heroMain.style.backgroundSize = 'cover';
+                        heroMain.style.backgroundPosition = 'center';
+                    }
                     heroMain.innerHTML = `
                         <div class="hero__main-overlay" aria-hidden="true"></div>
                         <div class="hero__main-content">
-                            <span class="tag tag--${main.category.toLowerCase()}">${main.category}</span>
+                            <span class="tag tag--${(main.category || 'news').toLowerCase()}">${main.category || 'News'}</span>
                             <h1 class="hero__main-title">${main.title}</h1>
+                            <p style="color:rgba(255,255,255,.75);font-size:14px;margin-bottom:12px;line-height:1.5;">${main.excerpt || ''}</p>
                             <div class="hero__main-meta">
                                 <span><i data-lucide="user"></i> ${main.author}</span>
                                 <span><i data-lucide="clock"></i> <time>${new Date(main.date).toLocaleDateString()}</time></span>
@@ -205,19 +210,23 @@
                     `;
                 }
 
+                // Only update side cards if we have more than 1 story
                 const side = stories.slice(1);
                 const heroSide = $('.hero__side');
-                if (heroSide) {
+                if (heroSide && side.length > 0) {
                     heroSide.innerHTML = '';
                     side.forEach((s, i) => {
                         const card = document.createElement('article');
                         card.className = `hero__card fade-in stagger-${i+1} visible`;
-                        card.style.backgroundImage = `url(${s.image})`;
-                        card.style.backgroundSize = 'cover';
+                        if (s.image && !s.image.includes('logo.png')) {
+                            card.style.backgroundImage = `url(${s.image})`;
+                            card.style.backgroundSize = 'cover';
+                            card.style.backgroundPosition = 'center';
+                        }
                         card.innerHTML = `
                             <div class="hero__card-overlay" aria-hidden="true"></div>
                             <div class="hero__card-content">
-                                <span class="tag tag--${s.category.toLowerCase()}">${s.category}</span>
+                                <span class="tag tag--${(s.category || 'news').toLowerCase()}">${s.category || 'News'}</span>
                                 <h2 class="hero__card-title">${s.title}</h2>
                                 <div class="hero__card-meta"><time>${new Date(s.date).toLocaleDateString()}</time></div>
                             </div>
@@ -225,10 +234,16 @@
                         heroSide.appendChild(card);
                     });
                 }
+                // If only 1 story, make the hero span full width
+                if (stories.length === 1 && heroGrid) {
+                    heroGrid.style.gridTemplateColumns = '1fr';
+                    const heroSideEl = $('.hero__side');
+                    if (heroSideEl) heroSideEl.style.display = 'none';
+                }
             } else {
                 console.log('ZiloNews: No stories found for Hero.');
                 const mainHero = $('.hero__main');
-                if (mainHero) mainHero.innerHTML = '<div style="padding:40px;text-align:center;"><h3>No stories published yet.</h3><p>Go to the admin panel to post your first story!</p></div>';
+                if (mainHero) mainHero.innerHTML = '<div style="padding:40px;text-align:center;color:#fff;"><h3>No stories published yet.</h3><p style="opacity:.7;margin-top:8px;">Go to the admin panel to post your first story!</p></div>';
             }
             initIcons();
         } catch (e) {
