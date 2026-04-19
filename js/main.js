@@ -169,30 +169,97 @@
   setWeather();
 
   /* ================================================================
-     NEWSLETTER FORM
+     LUCIDE ICONS
+  ================================================================ */
+  function initIcons() {
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  }
+  initIcons();
+
+  /* ================================================================
+     BACK4APP NEWS INTEGRATION
+  ================================================================ */
+  async function loadDynamicNews() {
+    if (typeof API === 'undefined') return;
+    
+    const techContainer = $('#tech-news-container');
+    if (techContainer) {
+      const techNews = await API.fetchStories('Technology', 3);
+      if (techNews && techNews.length > 0) {
+        techNews.forEach(story => {
+          const card = document.createElement('article');
+          card.className = 'article-card fade-in visible';
+          card.innerHTML = `
+            <div class="article-card__img">
+              <img src="${story.image}" alt="${story.title}" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div class="article-card__body">
+              <div class="article-card__tag"><span class="tag tag--tech">${story.category}</span></div>
+              <h3 class="article-card__title">${story.title}</h3>
+              <p class="article-card__excerpt">${story.excerpt}</p>
+              <div class="article-card__meta">
+                <div class="article-card__author-avatar" aria-hidden="true">${story.author.substring(0,2).toUpperCase()}</div>
+                <span>${story.author}</span>
+                <span>
+                  <i data-lucide="clock" style="width:14px; height:14px;"></i>
+                  <time datetime="${story.date}">${new Date(story.date).toLocaleDateString()}</time>
+                </span>
+                <span>${story.readTime}</span>
+              </div>
+            </div>
+          `;
+          techContainer.prepend(card);
+        });
+        initIcons();
+      }
+    }
+  }
+  loadDynamicNews();
+
+  /* ================================================================
+     NEWSLETTER FORM (Updated for Back4App)
   ================================================================ */
   const newsletterForm = $('#newsletter-form');
-  on(newsletterForm, 'submit', (e) => {
-    e.preventDefault();
-    const email = $('#newsletter-email');
-    if (!email || !email.value.trim()) return;
+  if (newsletterForm) {
+    on(newsletterForm, 'submit', async (e) => {
+      e.preventDefault();
+      const emailInput = $('#newsletter-email');
+      if (!emailInput || !emailInput.value.trim()) return;
 
-    const btn = newsletterForm.querySelector('.newsletter-widget__btn');
-    const originalText = btn ? btn.textContent : '';
+      const btn = newsletterForm.querySelector('.newsletter-widget__btn');
+      const originalText = btn ? btn.innerHTML : '';
 
-    if (btn) {
-      btn.textContent = '✓ Subscribed!';
-      btn.style.background = 'rgba(255,255,255,.9)';
-    }
-    if (email) email.value = '';
-
-    setTimeout(() => {
       if (btn) {
-        btn.textContent = originalText;
-        btn.style.background = '';
+        btn.textContent = 'Processing…';
+        btn.disabled = true;
       }
-    }, 3000);
-  });
+
+      const success = typeof API !== 'undefined' ? await API.subscribe(emailInput.value.trim()) : true;
+
+      if (btn) {
+        if (success) {
+          btn.innerHTML = '✓ Subscribed!';
+          btn.style.background = '#14B980';
+          btn.style.color = '#fff';
+          emailInput.value = '';
+        } else {
+          btn.textContent = 'Error. Try again.';
+        }
+        btn.disabled = false;
+      }
+
+      setTimeout(() => {
+        if (btn) {
+          btn.innerHTML = originalText;
+          btn.style.background = '';
+          btn.style.color = '';
+          initIcons();
+        }
+      }, 4000);
+    });
+  }
 
   /* ================================================================
      COUNTER ANIMATION — Stats Bar

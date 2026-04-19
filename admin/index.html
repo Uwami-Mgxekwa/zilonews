@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZiloNews Admin | Dashboard</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        :root { --primary: #E8001D; --dark: #111418; }
+        body { background: #f4f7f6; font-family: 'Inter', sans-serif; display: flex; min-height: 100vh; }
+        .sidebar { width: 260px; background: var(--dark); color: white; padding: 20px; flex-shrink: 0; }
+        .main-content { flex-grow: 1; padding: 40px; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .btn { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 0.9rem; }
+        input, textarea, select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { text-align: left; padding: 12px; border-bottom: 1px solid #eee; }
+        th { font-weight: 700; color: #666; }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div style="font-size: 1.5rem; font-weight: 800; margin-bottom: 40px; color: var(--primary);">ZiloNews <span style="color:white">Admin</span></div>
+        <nav>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 15px;"><a href="#" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 10px;"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
+                <li style="margin-bottom: 15px;"><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none; display: flex; align-items: center; gap: 10px;"><i data-lucide="file-text"></i> Post Story</a></li>
+                <li style="margin-bottom: 15px;"><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none; display: flex; align-items: center; gap: 10px;"><i data-lucide="users"></i> Subscribers</a></li>
+                <li style="margin-bottom: 15px;"><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none; display: flex; align-items: center; gap: 10px;"><i data-lucide="settings"></i> Settings</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1>Post a New Story</h1>
+            <div id="status-msg"></div>
+        </header>
+
+        <section class="card">
+            <form id="story-form">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="story-title" placeholder="Enter headline..." required>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="story-category">
+                            <option value="Technology">Technology</option>
+                            <option value="Politics">Politics</option>
+                            <option value="World">World</option>
+                            <option value="Business">Business</option>
+                            <option value="Science">Science</option>
+                            <option value="Sports">Sports</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Author</label>
+                        <input type="text" id="story-author" placeholder="Staff Reporter">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Excerpt (Short Summary)</label>
+                    <textarea id="story-excerpt" rows="2" placeholder="Brief summary for cards..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Content</label>
+                    <textarea id="story-content" rows="10" placeholder="Full article content..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Image URL</label>
+                    <input type="text" id="story-image" placeholder="https://example.com/image.jpg">
+                </div>
+                <button type="submit" class="btn"><i data-lucide="send"></i> Publish Story</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Recent Stories</h2>
+            <table id="stories-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="stories-list">
+                    <!-- Stories will appear here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script>
+        lucide.createIcons();
+
+        // Admin logic
+        const form = document.getElementById('story-form');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            btn.textContent = 'Publishing...';
+            btn.disabled = true;
+
+            const Story = Parse.Object.extend("Story");
+            const story = new Story();
+            
+            story.set("title", document.getElementById('story-title').value);
+            story.set("category", document.getElementById('story-category').value);
+            story.set("author", document.getElementById('story-author').value);
+            story.set("excerpt", document.getElementById('story-excerpt').value);
+            story.set("content", document.getElementById('story-content').value);
+            story.set("imageUrl", document.getElementById('story-image').value);
+
+            try {
+                await story.save();
+                alert("Story published successfully!");
+                form.reset();
+                loadStories();
+            } catch (err) {
+                console.error(err);
+                alert("Error: " + err.message);
+            } finally {
+                btn.innerHTML = '<i data-lucide="send"></i> Publish Story';
+                btn.disabled = false;
+                lucide.createIcons();
+            }
+        });
+
+        async function loadStories() {
+            const Story = Parse.Object.extend("Story");
+            const query = new Parse.Query(Story);
+            query.descending("createdAt");
+            query.limit(10);
+            
+            try {
+                const results = await query.find();
+                const list = document.getElementById('stories-list');
+                list.innerHTML = '';
+                results.forEach(s => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${s.get('title')}</td>
+                        <td>${s.get('category')}</td>
+                        <td>${s.createdAt.toLocaleDateString()}</td>
+                        <td><button style="background:none;border:none;color:var(--primary);cursor:pointer;"><i data-lucide="trash-2"></i></button></td>
+                    `;
+                    list.appendChild(tr);
+                });
+                lucide.createIcons();
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        loadStories();
+    </script>
+</body>
+</html>

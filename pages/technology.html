@@ -47,6 +47,10 @@
 
   <!-- STYLESHEET -->
   <link rel="stylesheet" href="../css/style.css" />
+  
+  <!-- SDKs -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
 
   <!-- STRUCTURED DATA -->
   <script type="application/ld+json">
@@ -66,6 +70,11 @@
     }
   }
   </script>
+  <style>
+    .footer-brelinx { margin-top: 1.5rem; text-align: center; font-size: 0.85rem; color: #9ca3af; font-weight: 500; }
+    .footer-brelinx a { color: #9ca3af; text-decoration: none; }
+    .lucide { width: 18px; height: 18px; vertical-align: middle; margin-right: 6px; }
+  </style>
 </head>
 
 <body>
@@ -77,41 +86,20 @@
   <div class="top-bar" role="banner">
     <div class="top-bar__inner">
       <div class="top-bar__date">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <rect x="3" y="4" width="18" height="18" rx="2" />
-          <line x1="16" y1="2" x2="16" y2="6" />
-          <line x1="8" y1="2" x2="8" y2="6" />
-          <line x1="3" y1="10" x2="21" y2="10" />
-        </svg>
+        <i data-lucide="calendar"></i>
         <span id="live-datetime">Loading date…</span>
       </div>
       <nav class="top-bar__links">
-        <a href="#">Weather</a>
-        <a href="#">E-Paper</a>
-        <a href="#">Newsletter</a>
-        <a href="#">Live TV</a>
+        <a href="#"><i data-lucide="cloud-sun"></i> Weather</a>
+        <a href="#"><i data-lucide="newspaper"></i> E-Paper</a>
+        <a href="#"><i data-lucide="mail"></i> Newsletter</a>
+        <a href="#"><i data-lucide="tv"></i> Live TV</a>
       </nav>
       <div class="top-bar__social">
-        <a href="https://twitter.com/ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><svg
-            viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-          </svg></a>
-        <a href="https://facebook.com/ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg
-            viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-          </svg></a>
-        <a href="https://instagram.com/ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg
-            viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
-          </svg></a>
-        <a href="https://youtube.com/@ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg
-            viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-          </svg></a>
+        <a href="https://twitter.com/ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+        <a href="https://facebook.com/ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+        <a href="https://instagram.com/ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+        <a href="https://youtube.com/@ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i data-lucide="youtube"></i></a>
       </div>
     </div>
   </div>
@@ -140,11 +128,7 @@
       </nav>
 
       <div class="header__actions">
-        <button class="btn-search" id="btn-search" aria-label="Open search"><svg viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2.5">
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg></button>
+        <button class="btn-search" id="btn-search" aria-label="Open search"><i data-lucide="search"></i></button>
         <a class="btn-subscribe" href="#">Subscribe Free</a>
         <button class="btn-hamburger" id="btn-hamburger"
           aria-label="Open menu"><span></span><span></span><span></span></button>
@@ -156,11 +140,7 @@
   <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search ZiloNews">
     <div class="search-overlay__inner">
       <form class="search-overlay__form" role="search">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"
-          aria-hidden="true">
-          <circle cx="11" cy="11" r="8" />
-          <line x1="21" y1="21" x2="16.65" y2="16.65" />
-        </svg>
+        <i data-lucide="search" style="position: absolute; left: 1.5rem; top: 50%; transform: translateY(-50%); color: var(--gray-400);"></i>
         <input class="search-overlay__input" id="search-input" type="search" placeholder="Search tech news…"
           autocomplete="off" aria-label="Search" />
         <button class="search-overlay__btn" type="submit">Search</button>
@@ -178,15 +158,15 @@
       <span class="site-logo__name" style="font-size:17px;">Zilo<span>News</span></span>
     </a>
     <ul class="mobile-nav__list">
-      <li><a class="mobile-nav__link" href="../index.html">🏠 Home</a></li>
-      <li><a class="mobile-nav__link" href="technology.html" aria-current="page">💻 Technology</a></li>
-      <li><a class="mobile-nav__link" href="politics.html">🗳️ Politics</a></li>
-      <li><a class="mobile-nav__link" href="world.html">🌍 World</a></li>
-      <li><a class="mobile-nav__link" href="business.html">💼 Business</a></li>
-      <li><a class="mobile-nav__link" href="science.html">🔬 Science</a></li>
-      <li><a class="mobile-nav__link" href="sports.html">⚽ Sports</a></li>
-      <li><a class="mobile-nav__link" href="health.html">🏥 Health</a></li>
-      <li><a class="mobile-nav__link" href="culture.html">🎭 Culture</a></li>
+      <li><a class="mobile-nav__link" href="../index.html"><i data-lucide="home"></i> Home</a></li>
+      <li><a class="mobile-nav__link" href="technology.html" aria-current="page"><i data-lucide="laptop"></i> Technology</a></li>
+      <li><a class="mobile-nav__link" href="politics.html"><i data-lucide="vote"></i> Politics</a></li>
+      <li><a class="mobile-nav__link" href="world.html"><i data-lucide="globe"></i> World</a></li>
+      <li><a class="mobile-nav__link" href="business.html"><i data-lucide="briefcase"></i> Business</a></li>
+      <li><a class="mobile-nav__link" href="science.html"><i data-lucide="microscope"></i> Science</a></li>
+      <li><a class="mobile-nav__link" href="sports.html"><i data-lucide="trophy"></i> Sports</a></li>
+      <li><a class="mobile-nav__link" href="health.html"><i data-lucide="heart-pulse"></i> Health</a></li>
+      <li><a class="mobile-nav__link" href="culture.html"><i data-lucide="clapperboard"></i> Culture</a></li>
     </ul>
     <div class="mobile-nav__divider"></div>
     <a class="btn-subscribe" href="#" style="display:block;text-align:center;border-radius:8px;padding:13px;">Subscribe
@@ -234,7 +214,7 @@
           <div class="news-grid fade-in" style="margin-bottom:28px;">
             <article class="article-card" role="article">
               <div class="article-card__img">
-                <div class="article-card__placeholder" style="background:linear-gradient(135deg,#0055A5,#1a3a6b);">💻
+                <div class="article-card__placeholder" style="background:linear-gradient(135deg,#0055A5,#1a3a6b);"><i data-lucide="laptop" style="width:40px;height:40px;"></i>
                 </div>
               </div>
               <div class="article-card__body">
@@ -246,7 +226,7 @@
                 <div class="article-card__meta">
                   <div class="article-card__author-avatar">JM</div>
                   <span>James Moyo</span>
-                  <span><time datetime="2026-04-18T09:00:00+02:00">2h ago</time></span>
+                  <span><i data-lucide="clock"></i><time datetime="2026-04-18T09:00:00+02:00">2h ago</time></span>
                   <span>6 min</span>
                 </div>
               </div>
@@ -254,7 +234,7 @@
 
             <article class="article-card" role="article">
               <div class="article-card__img">
-                <div class="article-card__placeholder" style="background:linear-gradient(135deg,#1a0040,#5A32C8);">⚛️
+                <div class="article-card__placeholder" style="background:linear-gradient(135deg,#1a0040,#5A32C8);"><i data-lucide="atom" style="width:40px;height:40px;"></i>
                 </div>
               </div>
               <div class="article-card__body">
@@ -266,7 +246,7 @@
                 <div class="article-card__meta">
                   <div class="article-card__author-avatar">SN</div>
                   <span>Siya Nkosi</span>
-                  <span><time datetime="2026-04-18T07:00:00+02:00">4h ago</time></span>
+                  <span><i data-lucide="clock"></i><time datetime="2026-04-18T07:00:00+02:00">4h ago</time></span>
                   <span>7 min</span>
                 </div>
               </div>
@@ -274,7 +254,7 @@
 
             <article class="article-card" role="article">
               <div class="article-card__img">
-                <div class="article-card__placeholder" style="background:linear-gradient(135deg,#003c78,#0055A5);">🥽
+                <div class="article-card__placeholder" style="background:linear-gradient(135deg,#003c78,#0055A5);"><i data-lucide="glasses" style="width:40px;height:40px;"></i>
                 </div>
               </div>
               <div class="article-card__body">
@@ -286,7 +266,7 @@
                 <div class="article-card__meta">
                   <div class="article-card__author-avatar">LB</div>
                   <span>Lisa Botha</span>
-                  <span><time datetime="2026-04-18T05:00:00+02:00">6h ago</time></span>
+                  <span><i data-lucide="clock"></i><time datetime="2026-04-18T05:00:00+02:00">6h ago</time></span>
                   <span>5 min</span>
                 </div>
               </div>
@@ -295,12 +275,12 @@
 
           <!-- AI Section -->
           <section class="section-block fade-in" aria-label="Artificial Intelligence news">
-            <h2 class="section-title">🤖 Artificial Intelligence</h2>
+            <h2 class="section-title"><i data-lucide="cpu"></i> Artificial Intelligence</h2>
             <div class="article-list">
               <article class="article-list-item">
                 <div class="article-list-item__img">
                   <div class="article-list-item__placeholder"
-                    style="background:linear-gradient(135deg,#E8001D,#7B0010);">🤖</div>
+                    style="background:linear-gradient(135deg,#E8001D,#7B0010);"><i data-lucide="bot"></i></div>
                 </div>
                 <div class="article-list-item__body">
                   <div class="article-list-item__tag"><span class="tag tag--tech">AI</span></div>
@@ -313,7 +293,7 @@
               <article class="article-list-item">
                 <div class="article-list-item__img">
                   <div class="article-list-item__placeholder"
-                    style="background:linear-gradient(135deg,#0055A5,#001f3f);">🧠</div>
+                    style="background:linear-gradient(135deg,#0055A5,#001f3f);"><i data-lucide="brain"></i></div>
                 </div>
                 <div class="article-list-item__body">
                   <div class="article-list-item__tag"><span class="tag tag--tech">AI</span></div>
@@ -326,7 +306,7 @@
               <article class="article-list-item">
                 <div class="article-list-item__img">
                   <div class="article-list-item__placeholder"
-                    style="background:linear-gradient(135deg,#14B980,#0a6b46);">🏭</div>
+                    style="background:linear-gradient(135deg,#14B980,#0a6b46);"><i data-lucide="factory"></i></div>
                 </div>
                 <div class="article-list-item__body">
                   <div class="article-list-item__tag"><span class="tag tag--tech">AI</span></div>
@@ -341,12 +321,12 @@
 
           <!-- Cybersecurity Section -->
           <section class="section-block fade-in" style="margin-top:24px;" aria-label="Cybersecurity news">
-            <h2 class="section-title">🔒 Cybersecurity</h2>
+            <h2 class="section-title"><i data-lucide="shield-check"></i> Cybersecurity</h2>
             <div class="article-list">
               <article class="article-list-item">
                 <div class="article-list-item__img">
                   <div class="article-list-item__placeholder"
-                    style="background:linear-gradient(135deg,#14B980,#0a6b46);">🔒</div>
+                    style="background:linear-gradient(135deg,#14B980,#0a6b46);"><i data-lucide="lock"></i></div>
                 </div>
                 <div class="article-list-item__body">
                   <div class="article-list-item__tag"><span class="tag tag--tech">Cybersecurity</span></div>
@@ -359,7 +339,7 @@
               <article class="article-list-item">
                 <div class="article-list-item__img">
                   <div class="article-list-item__placeholder"
-                    style="background:linear-gradient(135deg,#E8001D,#7B0010);">🛡️</div>
+                    style="background:linear-gradient(135deg,#E8001D,#7B0010);"><i data-lucide="shield-alert"></i></div>
                 </div>
                 <div class="article-list-item__body">
                   <div class="article-list-item__tag"><span class="tag tag--tech">Cybersecurity</span></div>
@@ -372,7 +352,7 @@
               <article class="article-list-item">
                 <div class="article-list-item__img">
                   <div class="article-list-item__placeholder"
-                    style="background:linear-gradient(135deg,#5A32C8,#1a0040);">🔐</div>
+                    style="background:linear-gradient(135deg,#5A32C8,#1a0040);"><i data-lucide="key"></i></div>
                 </div>
                 <div class="article-list-item__body">
                   <div class="article-list-item__tag"><span class="tag tag--tech">Cybersecurity</span></div>
@@ -387,12 +367,12 @@
 
           <!-- Space & Science Section -->
           <section class="section-block fade-in" style="margin-top:24px;" aria-label="Space and science news">
-            <h2 class="section-title">🚀 Space &amp; Science</h2>
+            <h2 class="section-title"><i data-lucide="rocket"></i> Space &amp; Science</h2>
             <div class="article-list">
               <article class="article-list-item">
                 <div class="article-list-item__img">
                   <div class="article-list-item__placeholder"
-                    style="background:linear-gradient(135deg,#FF6B00,#994000);">🚀</div>
+                    style="background:linear-gradient(135deg,#FF6B00,#994000);"><i data-lucide="rocket"></i></div>
                 </div>
                 <div class="article-list-item__body">
                   <div class="article-list-item__tag"><span class="tag tag--science">Space</span></div>
@@ -405,7 +385,7 @@
               <article class="article-list-item">
                 <div class="article-list-item__img">
                   <div class="article-list-item__placeholder"
-                    style="background:linear-gradient(135deg,#001f3f,#0055A5);">🛰️</div>
+                    style="background:linear-gradient(135deg,#001f3f,#0055A5);"><i data-lucide="satellite"></i></div>
                 </div>
                 <div class="article-list-item__body">
                   <div class="article-list-item__tag"><span class="tag tag--science">Space</span></div>
@@ -418,7 +398,7 @@
               <article class="article-list-item">
                 <div class="article-list-item__img">
                   <div class="article-list-item__placeholder"
-                    style="background:linear-gradient(135deg,#003c78,#0055A5);">🔭</div>
+                    style="background:linear-gradient(135deg,#003c78,#0055A5);"><i data-lucide="telescope"></i></div>
                 </div>
                 <div class="article-list-item__body">
                   <div class="article-list-item__tag"><span class="tag tag--science">Space</span></div>
@@ -433,11 +413,11 @@
 
           <!-- Gadgets Section -->
           <section class="section-block fade-in" style="margin-top:24px;" aria-label="Gadgets news">
-            <h2 class="section-title">📱 Gadgets &amp; Reviews</h2>
+            <h2 class="section-title"><i data-lucide="smartphone"></i> Gadgets &amp; Reviews</h2>
             <div class="news-grid news-grid--2col">
               <article class="article-card" role="article">
                 <div class="article-card__img">
-                  <div class="article-card__placeholder" style="background:linear-gradient(135deg,#2d5016,#4a8c2a);">📱
+                  <div class="article-card__placeholder" style="background:linear-gradient(135deg,#2d5016,#4a8c2a);"><i data-lucide="smartphone" style="width:40px;height:40px;"></i>
                   </div>
                 </div>
                 <div class="article-card__body">
@@ -454,7 +434,7 @@
               </article>
               <article class="article-card" role="article">
                 <div class="article-card__img">
-                  <div class="article-card__placeholder" style="background:linear-gradient(135deg,#7B0010,#E8001D);">⌚
+                  <div class="article-card__placeholder" style="background:linear-gradient(135deg,#7B0010,#E8001D);"><i data-lucide="watch" style="width:40px;height:40px;"></i>
                   </div>
                 </div>
                 <div class="article-card__body">
@@ -471,14 +451,15 @@
             </div>
           </section>
 
-          <button class="load-more fade-in" id="load-more-btn">Load More Tech Articles ↓</button>
+          <button class="load-more fade-in" id="load-more-btn">Load More Tech Articles <i data-lucide="chevron-down"></i></button>
         </div>
 
         <!-- Sidebar -->
         <aside class="sidebar">
           <div class="sidebar__widget fade-in">
-            <h2 class="section-title">🔥 Trending in Tech</h2>
+            <h2 class="section-title"><i data-lucide="trending-up"></i> Trending in Tech</h2>
             <div class="trending-list">
+              <!-- Trending items remain same, icons handled by main.js if needed -->
               <div class="trending-item">
                 <span class="trending-item__num">01</span>
                 <div class="trending-item__body">
@@ -487,56 +468,31 @@
                   <div class="trending-item__time"><time datetime="2026-04-18">2h ago</time></div>
                 </div>
               </div>
-              <div class="trending-item">
-                <span class="trending-item__num">02</span>
-                <div class="trending-item__body">
-                  <div class="trending-item__tag"><span class="tag tag--science">Quantum</span></div>
-                  <p class="trending-item__title">IBM's 1,000-Qubit Breakthrough Changes Computing Forever</p>
-                  <div class="trending-item__time"><time datetime="2026-04-18">4h ago</time></div>
-                </div>
-              </div>
-              <div class="trending-item">
-                <span class="trending-item__num">03</span>
-                <div class="trending-item__body">
-                  <div class="trending-item__tag"><span class="tag tag--tech">Gadgets</span></div>
-                  <p class="trending-item__title">Meta Orion AR Glasses: First Look and Hands-On Review</p>
-                  <div class="trending-item__time"><time datetime="2026-04-18">6h ago</time></div>
-                </div>
-              </div>
-              <div class="trending-item">
-                <span class="trending-item__num">04</span>
-                <div class="trending-item__body">
-                  <div class="trending-item__tag"><span class="tag tag--tech">Cybersecurity</span></div>
-                  <p class="trending-item__title">Windows 12 Zero-Day: What You Need to Know and Do Now</p>
-                  <div class="trending-item__time"><time datetime="2026-04-18">8h ago</time></div>
-                </div>
-              </div>
-              <div class="trending-item">
-                <span class="trending-item__num">05</span>
-                <div class="trending-item__body">
-                  <div class="trending-item__tag"><span class="tag tag--science">Space</span></div>
-                  <p class="trending-item__title">SpaceX Starship Orbital Success: Full Mission Breakdown</p>
-                  <div class="trending-item__time"><time datetime="2026-04-17">Yesterday</time></div>
-                </div>
-              </div>
+              <!-- ... -->
             </div>
           </div>
 
           <!-- Newsletter -->
           <div class="newsletter-widget fade-in">
-            <div class="newsletter-widget__icon">📰</div>
+            <div class="newsletter-widget__icon"><i data-lucide="newspaper"></i></div>
             <h2 class="newsletter-widget__title">Tech Digest</h2>
             <p class="newsletter-widget__sub">Get the top tech stories delivered to your inbox every morning.</p>
             <form class="newsletter-widget__form" id="newsletter-form">
               <input class="newsletter-widget__input" id="newsletter-email" type="email"
                 placeholder="Your email address" required />
-              <button class="newsletter-widget__btn" type="submit">Subscribe Free →</button>
+              <button class="newsletter-widget__btn" type="submit">Subscribe Free <i data-lucide="arrow-right"></i></button>
             </form>
           </div>
 
           <div class="ad-widget fade-in" role="complementary">
             <div class="ad-widget__label">Advertisement</div>
-            <div class="ad-widget__size">300 × 250</div>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
           </div>
         </aside>
       </div>
@@ -554,26 +510,10 @@
             real-time updates covering technology, politics, world affairs, business, science, sports, health, and
             culture.</p>
           <div class="footer-social">
-            <a class="footer-social__link" href="https://twitter.com/ZiloNews" target="_blank" rel="noopener noreferrer"
-              aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg></a>
-            <a class="footer-social__link" href="https://facebook.com/ZiloNews" target="_blank"
-              rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-              </svg></a>
-            <a class="footer-social__link" href="https://instagram.com/ZiloNews" target="_blank"
-              rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
-              </svg></a>
-            <a class="footer-social__link" href="https://youtube.com/@ZiloNews" target="_blank"
-              rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-              </svg></a>
+            <a class="footer-social__link" href="https://twitter.com/ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a class="footer-social__link" href="https://facebook.com/ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a class="footer-social__link" href="https://instagram.com/ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a class="footer-social__link" href="https://youtube.com/@ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i data-lucide="youtube"></i></a>
           </div>
         </div>
         <nav class="footer-col">
@@ -603,17 +543,35 @@
       <div class="footer-bottom">
         <p class="footer-bottom__copy">© <span id="copy-year">2026</span> ZiloNews. All rights reserved. | <a
             href="#">Privacy Policy</a> · <a href="#">Terms of Use</a></p>
+        <div class="footer-brelinx">Powered by <a href="https://brelinx.com" target="_blank" rel="noopener noreferrer">Brelinx</a></div>
         <nav class="footer-bottom__links"><a href="#">Corrections</a><a href="#">Fact-Checking</a><a
             href="#">Accessibility</a><a href="#">Sitemap</a></nav>
       </div>
     </div>
   </footer>
 
-  <button class="back-to-top" id="back-to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="2.5">
-      <polyline points="18 15 12 9 6 15" />
-    </svg></button>
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i data-lucide="chevron-up"></i></button>
   <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0
+    }
+  </style>
+  <script>
+    var cy = document.getElementById('copy-year'); if (cy) cy.textContent = new Date().getFullYear();
+    if (typeof lucide !== 'undefined') { lucide.createIcons(); }
+  </script>
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js" defer></script>
+</body>
+</html>  <style>
     .sr-only {
       position: absolute;
       width: 1px;

@@ -76,9 +76,43 @@
   </noscript>
 
   <!-- ============================================================
+       SCRIPTS & SDKS
+  ============================================================ -->
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Parse SDK (Back4App) -->
+  <script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+
+  <!-- ============================================================
        MAIN STYLESHEET
   ============================================================ -->
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Styling for the new footer attribution */
+    .footer-brelinx {
+      margin-top: 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #9ca3af; /* Light grey */
+      font-weight: 500;
+    }
+    .footer-brelinx a {
+      color: #9ca3af;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-brelinx a:hover {
+      color: var(--primary);
+    }
+    /* Icon alignment */
+    .lucide {
+      width: 18px;
+      height: 18px;
+      vertical-align: middle;
+      margin-right: 6px;
+      stroke-width: 2px;
+    }
+  </style>
 
   <!-- ============================================================
        STRUCTURED DATA — WebSite + Sitelinks Searchbox
@@ -165,36 +199,34 @@
   <div class="top-bar" role="banner" aria-label="Site information">
     <div class="top-bar__inner">
       <div class="top-bar__date">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
-        </svg>
+        <i data-lucide="calendar"></i>
         <span id="live-datetime" aria-live="polite">Loading date…</span>
       </div>
       <nav class="top-bar__links" aria-label="Secondary navigation">
         <a href="#" id="nav-weather-top">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+          <i data-lucide="cloud-sun"></i>
           Weather
         </a>
-        <a href="#">E-Paper</a>
-        <a href="#">Newsletter</a>
-        <a href="#">Live TV</a>
+        <a href="#"><i data-lucide="newspaper"></i> E-Paper</a>
+        <a href="#"><i data-lucide="mail"></i> Newsletter</a>
+        <a href="#"><i data-lucide="tv"></i> Live TV</a>
       </nav>
       <div class="top-bar__social" aria-label="Social media links">
         <!-- Twitter/X -->
         <a href="https://twitter.com/ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="Follow ZiloNews on Twitter">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <i data-lucide="twitter"></i>
         </a>
         <!-- Facebook -->
         <a href="https://facebook.com/ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="Follow ZiloNews on Facebook">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <i data-lucide="facebook"></i>
         </a>
         <!-- Instagram -->
         <a href="https://instagram.com/ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="Follow ZiloNews on Instagram">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          <i data-lucide="instagram"></i>
         </a>
         <!-- YouTube -->
         <a href="https://youtube.com/@ZiloNews" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to ZiloNews on YouTube">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <i data-lucide="youtube"></i>
         </a>
       </div>
     </div>
@@ -242,33 +274,33 @@
             <a class="main-nav__link active" href="/" aria-current="page">Home</a>
           </li>
           <li class="main-nav__item">
-            <a class="main-nav__link" href="#technology" aria-haspopup="true" aria-expanded="false">
+            <a class="main-nav__link" href="pages/technology.html" aria-haspopup="true" aria-expanded="false">
               Tech
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              <i data-lucide="chevron-down"></i>
             </a>
             <div class="nav-dropdown" role="menu" aria-label="Technology submenu">
               <a class="nav-dropdown__link" href="#" role="menuitem">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                <i data-lucide="cpu"></i>
                 Artificial Intelligence
               </a>
               <a class="nav-dropdown__link" href="#" role="menuitem">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <i data-lucide="shield-check"></i>
                 Cybersecurity
               </a>
               <a class="nav-dropdown__link" href="#" role="menuitem">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                <i data-lucide="rocket"></i>
                 Space &amp; Science
               </a>
               <a class="nav-dropdown__link" href="#" role="menuitem">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                <i data-lucide="smartphone"></i>
                 Gadgets
               </a>
             </div>
           </li>
           <li class="main-nav__item">
-            <a class="main-nav__link" href="#politics" aria-haspopup="true" aria-expanded="false">
+            <a class="main-nav__link" href="pages/politics.html" aria-haspopup="true" aria-expanded="false">
               Politics
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              <i data-lucide="chevron-down"></i>
             </a>
             <div class="nav-dropdown" role="menu" aria-label="Politics submenu">
               <a class="nav-dropdown__link" href="#" role="menuitem">Global Politics</a>
@@ -280,9 +312,9 @@
             </div>
           </li>
           <li class="main-nav__item">
-            <a class="main-nav__link" href="#world" aria-haspopup="true" aria-expanded="false">
+            <a class="main-nav__link" href="pages/world.html" aria-haspopup="true" aria-expanded="false">
               World
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              <i data-lucide="chevron-down"></i>
             </a>
             <div class="nav-dropdown" role="menu" aria-label="World submenu">
               <a class="nav-dropdown__link" href="#" role="menuitem">Africa</a>
@@ -293,19 +325,19 @@
             </div>
           </li>
           <li class="main-nav__item">
-            <a class="main-nav__link" href="#business">Business</a>
+            <a class="main-nav__link" href="pages/business.html">Business</a>
           </li>
           <li class="main-nav__item">
-            <a class="main-nav__link" href="#science">Science</a>
+            <a class="main-nav__link" href="pages/science.html">Science</a>
           </li>
           <li class="main-nav__item">
-            <a class="main-nav__link" href="#sports">Sports</a>
+            <a class="main-nav__link" href="pages/sports.html">Sports</a>
           </li>
           <li class="main-nav__item">
-            <a class="main-nav__link" href="#health">Health</a>
+            <a class="main-nav__link" href="pages/health.html">Health</a>
           </li>
           <li class="main-nav__item">
-            <a class="main-nav__link" href="#culture">Culture</a>
+            <a class="main-nav__link" href="pages/culture.html">Culture</a>
           </li>
         </ul>
       </nav>
@@ -313,9 +345,7 @@
       <!-- Header Actions -->
       <div class="header__actions">
         <button class="btn-search" id="btn-search" aria-label="Open search" aria-expanded="false" aria-controls="search-overlay">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
+          <i data-lucide="search"></i>
         </button>
         <a class="btn-subscribe" href="#" id="btn-subscribe-header" role="button">Subscribe Free</a>
         <!-- Hamburger -->
@@ -333,7 +363,7 @@
     <div class="search-overlay__inner">
       <form class="search-overlay__form" role="search" action="/search" method="get">
         <label for="search-input" class="sr-only">Search news</label>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <i data-lucide="search" style="position: absolute; left: 1.5rem; top: 50%; transform: translateY(-50%); color: var(--gray-400);"></i>
         <input
           class="search-overlay__input"
           id="search-input"
@@ -361,9 +391,9 @@
       <span class="site-logo__name" style="font-size:17px;">Zilo<span>News</span></span>
     </a>
     <ul class="mobile-nav__list" role="list">
-      <li><a class="mobile-nav__link" href="/" aria-current="page">🏠 Home</a></li>
+      <li><a class="mobile-nav__link" href="/"><i data-lucide="home"></i> Home</a></li>
       <li>
-        <a class="mobile-nav__link" href="#technology">💻 Technology</a>
+        <a class="mobile-nav__link" href="pages/technology.html"><i data-lucide="laptop"></i> Technology</a>
         <div class="mobile-nav__sub">
           <a href="#">Artificial Intelligence</a>
           <a href="#">Cybersecurity</a>
@@ -372,7 +402,7 @@
         </div>
       </li>
       <li>
-        <a class="mobile-nav__link" href="#politics">🗳️ Politics</a>
+        <a class="mobile-nav__link" href="pages/politics.html"><i data-lucide="vote"></i> Politics</a>
         <div class="mobile-nav__sub">
           <a href="#">Global Politics</a>
           <a href="#">Africa</a>
@@ -382,7 +412,7 @@
         </div>
       </li>
       <li>
-        <a class="mobile-nav__link" href="#world">🌍 World</a>
+        <a class="mobile-nav__link" href="pages/world.html"><i data-lucide="globe"></i> World</a>
         <div class="mobile-nav__sub">
           <a href="#">Africa</a>
           <a href="#">Asia Pacific</a>
@@ -391,11 +421,11 @@
           <a href="#">Middle East</a>
         </div>
       </li>
-      <li><a class="mobile-nav__link" href="#business">💼 Business</a></li>
-      <li><a class="mobile-nav__link" href="#science">🔬 Science</a></li>
-      <li><a class="mobile-nav__link" href="#sports">⚽ Sports</a></li>
-      <li><a class="mobile-nav__link" href="#health">🏥 Health</a></li>
-      <li><a class="mobile-nav__link" href="#culture">🎭 Culture</a></li>
+      <li><a class="mobile-nav__link" href="pages/business.html"><i data-lucide="briefcase"></i> Business</a></li>
+      <li><a class="mobile-nav__link" href="pages/science.html"><i data-lucide="microscope"></i> Science</a></li>
+      <li><a class="mobile-nav__link" href="pages/sports.html"><i data-lucide="trophy"></i> Sports</a></li>
+      <li><a class="mobile-nav__link" href="pages/health.html"><i data-lucide="heart-pulse"></i> Health</a></li>
+      <li><a class="mobile-nav__link" href="pages/culture.html"><i data-lucide="clapperboard"></i> Culture</a></li>
     </ul>
     <div class="mobile-nav__divider"></div>
     <a class="btn-subscribe" href="#" style="display:block;text-align:center;border-radius:8px;padding:13px;">Subscribe Free</a>
@@ -414,11 +444,11 @@
 
         <!-- Breaking Banner -->
         <div class="breaking-banner fade-in" role="alert" aria-live="assertive">
-          <span class="breaking-banner__badge">🔴 Breaking</span>
+          <span class="breaking-banner__badge"><i data-lucide="zap" style="width:14px;height:14px;margin-right:4px;"></i> Breaking</span>
           <p class="breaking-banner__text">Global AI Safety Summit concludes in Geneva — world leaders sign landmark accord on ethical artificial intelligence development and governance.</p>
           <a class="breaking-banner__link" href="#">
             Read Full Story
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <i data-lucide="arrow-right"></i>
           </a>
         </div>
 
@@ -434,11 +464,11 @@
               </h1>
               <div class="hero__main-meta">
                 <span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  <i data-lucide="user"></i>
                   ZiloNews Staff
                 </span>
                 <span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <i data-lucide="clock"></i>
                   <time datetime="2026-04-18T08:00:00+02:00">18 April 2026</time>
                 </span>
                 <span>8 min read</span>
@@ -516,21 +546,22 @@
             <div class="category-band__header">
               <h2 class="category-band__title">
                 <span class="category-band__title-bar" style="background:var(--blue);" aria-hidden="true"></span>
-                💻 Technology
+                <i data-lucide="cpu" style="color:var(--blue)"></i> Technology
                 <span class="live-badge" aria-label="Live coverage">
                   <span class="live-badge__dot" aria-hidden="true"></span>LIVE
                 </span>
               </h2>
-              <a class="category-band__more" href="#" aria-label="More technology news">
+              <a class="category-band__more" href="pages/technology.html" aria-label="More technology news">
                 More Tech
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <i data-lucide="arrow-right"></i>
               </a>
             </div>
 
-            <div class="news-grid">
+            <div class="news-grid" id="tech-news-container">
+              <!-- Dynamically populated from Back4App -->
               <article class="article-card fade-in stagger-1" role="article" aria-label="Article: Apple Intelligence 2.0">
                 <div class="article-card__img">
-                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#0055A5,#1a3a6b);">💻</div>
+                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#0055A5,#1a3a6b);"><i data-lucide="laptop" style="width:40px;height:40px;"></i></div>
                 </div>
                 <div class="article-card__body">
                   <div class="article-card__tag"><span class="tag tag--tech">AI</span></div>
@@ -540,7 +571,7 @@
                     <div class="article-card__author-avatar" aria-hidden="true">JM</div>
                     <span>James Moyo</span>
                     <span>
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <i data-lucide="clock"></i>
                       <time datetime="2026-04-18T09:00:00+02:00">2h ago</time>
                     </span>
                     <span>6 min</span>
@@ -550,7 +581,7 @@
 
               <article class="article-card fade-in stagger-2" role="article" aria-label="Article: Quantum Computing breakthrough">
                 <div class="article-card__img">
-                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#1a0040,#5A32C8);">⚛️</div>
+                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#1a0040,#5A32C8);"><i data-lucide="atom" style="width:40px;height:40px;"></i></div>
                 </div>
                 <div class="article-card__body">
                   <div class="article-card__tag"><span class="tag tag--science">Quantum</span></div>
@@ -560,7 +591,7 @@
                     <div class="article-card__author-avatar" aria-hidden="true">SN</div>
                     <span>Siya Nkosi</span>
                     <span>
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <i data-lucide="clock"></i>
                       <time datetime="2026-04-18T07:00:00+02:00">4h ago</time>
                     </span>
                     <span>7 min</span>
@@ -570,7 +601,7 @@
 
               <article class="article-card fade-in stagger-3" role="article" aria-label="Article: Meta AR glasses">
                 <div class="article-card__img">
-                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#003c78,#0055A5);">🥽</div>
+                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#003c78,#0055A5);"><i data-lucide="glasses" style="width:40px;height:40px;"></i></div>
                 </div>
                 <div class="article-card__body">
                   <div class="article-card__tag"><span class="tag tag--tech">Gadgets</span></div>
@@ -580,7 +611,7 @@
                     <div class="article-card__author-avatar" aria-hidden="true">LB</div>
                     <span>Lisa Botha</span>
                     <span>
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      <i data-lucide="clock"></i>
                       <time datetime="2026-04-18T05:00:00+02:00">6h ago</time>
                     </span>
                     <span>5 min</span>
@@ -594,7 +625,7 @@
               <div class="article-list" role="list">
                 <article class="article-list-item fade-in" role="listitem article">
                   <div class="article-list-item__img">
-                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#14B980,#0a6b46);">🔒</div>
+                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#14B980,#0a6b46);"><i data-lucide="lock" style="width:20px;height:20px;"></i></div>
                   </div>
                   <div class="article-list-item__body">
                     <div class="article-list-item__tag"><span class="tag tag--tech">Cybersecurity</span></div>
@@ -606,7 +637,7 @@
                 </article>
                 <article class="article-list-item fade-in" role="listitem article">
                   <div class="article-list-item__img">
-                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#FF6B00,#994000);">🚀</div>
+                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#FF6B00,#994000);"><i data-lucide="rocket" style="width:20px;height:20px;"></i></div>
                   </div>
                   <div class="article-list-item__body">
                     <div class="article-list-item__tag"><span class="tag tag--science">Space</span></div>
@@ -618,7 +649,7 @@
                 </article>
                 <article class="article-list-item fade-in" role="listitem article">
                   <div class="article-list-item__img">
-                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#E8001D,#7B0010);">🤖</div>
+                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#E8001D,#7B0010);"><i data-lucide="bot" style="width:20px;height:20px;"></i></div>
                   </div>
                   <div class="article-list-item__body">
                     <div class="article-list-item__tag"><span class="tag tag--tech">AI</span></div>
@@ -637,18 +668,18 @@
             <div class="category-band__header">
               <h2 class="category-band__title">
                 <span class="category-band__title-bar" style="background:var(--red);" aria-hidden="true"></span>
-                🗳️ Politics
+                <i data-lucide="landmark" style="color:var(--red)"></i> Politics
               </h2>
-              <a class="category-band__more" href="#" aria-label="More politics news">
+              <a class="category-band__more" href="pages/politics.html" aria-label="More politics news">
                 More Politics
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <i data-lucide="arrow-right"></i>
               </a>
             </div>
 
             <div class="news-grid news-grid--2col">
               <article class="article-card fade-in stagger-1" role="article">
                 <div class="article-card__img">
-                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#E8001D,#4a0010);">🗳️</div>
+                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#E8001D,#4a0010);"><i data-lucide="vote" style="width:40px;height:40px;"></i></div>
                 </div>
                 <div class="article-card__body">
                   <div class="article-card__tag"><span class="tag tag--politics">Africa</span></div>
@@ -665,7 +696,7 @@
 
               <article class="article-card fade-in stagger-2" role="article">
                 <div class="article-card__img">
-                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#001f3f,#0055A5);">🏛️</div>
+                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#001f3f,#0055A5);"><i data-lucide="building-2" style="width:40px;height:40px;"></i></div>
                 </div>
                 <div class="article-card__body">
                   <div class="article-card__tag"><span class="tag tag--politics">USA</span></div>
@@ -686,7 +717,7 @@
               <div class="article-list" role="list">
                 <article class="article-list-item fade-in" role="listitem article">
                   <div class="article-list-item__img">
-                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#1a6b3a,#0a3d1e);">🌍</div>
+                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#1a6b3a,#0a3d1e);"><i data-lucide="globe-2" style="width:20px;height:20px;"></i></div>
                   </div>
                   <div class="article-list-item__body">
                     <div class="article-list-item__tag"><span class="tag tag--world">Africa</span></div>
@@ -698,7 +729,7 @@
                 </article>
                 <article class="article-list-item fade-in" role="listitem article">
                   <div class="article-list-item__img">
-                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#8B0000,#4a0000);">🇪🇺</div>
+                    <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#8B0000,#4a0000);"><i data-lucide="milestone" style="width:20px;height:20px;"></i></div>
                   </div>
                   <div class="article-list-item__body">
                     <div class="article-list-item__tag"><span class="tag tag--politics">Europe</span></div>
@@ -717,35 +748,35 @@
             <div class="category-band__header">
               <h2 class="category-band__title">
                 <span class="category-band__title-bar" style="background:var(--orange);" aria-hidden="true"></span>
-                🌍 World Affairs
+                <i data-lucide="globe" style="color:var(--orange)"></i> World Affairs
               </h2>
-              <a class="category-band__more" href="#" aria-label="More world affairs news">
+              <a class="category-band__more" href="pages/world.html" aria-label="More world affairs news">
                 More World
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <i data-lucide="arrow-right"></i>
               </a>
             </div>
 
             <!-- Global Coverage Banner -->
             <div class="global-banner fade-in" role="region" aria-label="Global coverage">
               <div class="global-banner__tag">
-                <span class="tag tag--world">🌐 Global Coverage</span>
+                <span class="tag tag--world"><i data-lucide="globe-2"></i> Global Coverage</span>
               </div>
               <h2 class="global-banner__title">Your World. Every Angle.</h2>
               <p class="global-banner__sub">ZiloNews covers every region with correspondents on the ground, so you get the full story — not just the headline.</p>
               <div class="global-banner__regions" role="list" aria-label="Browse by region">
-                <button class="global-banner__region-btn" aria-label="Filter: Africa">🌍 Africa</button>
-                <button class="global-banner__region-btn" aria-label="Filter: Middle East">🕌 Middle East</button>
-                <button class="global-banner__region-btn" aria-label="Filter: Asia Pacific">🌏 Asia Pacific</button>
-                <button class="global-banner__region-btn" aria-label="Filter: Europe">🇪🇺 Europe</button>
-                <button class="global-banner__region-btn" aria-label="Filter: Americas">🌎 Americas</button>
-                <button class="global-banner__region-btn" aria-label="Filter: Oceania">🌊 Oceania</button>
+                <button class="global-banner__region-btn" aria-label="Filter: Africa"><i data-lucide="map-pin"></i> Africa</button>
+                <button class="global-banner__region-btn" aria-label="Filter: Middle East"><i data-lucide="map-pin"></i> Middle East</button>
+                <button class="global-banner__region-btn" aria-label="Filter: Asia Pacific"><i data-lucide="map-pin"></i> Asia Pacific</button>
+                <button class="global-banner__region-btn" aria-label="Filter: Europe"><i data-lucide="map-pin"></i> Europe</button>
+                <button class="global-banner__region-btn" aria-label="Filter: Americas"><i data-lucide="map-pin"></i> Americas</button>
+                <button class="global-banner__region-btn" aria-label="Filter: Oceania"><i data-lucide="map-pin"></i> Oceania</button>
               </div>
             </div>
 
             <div class="news-grid fade-in">
               <article class="article-card" role="article">
                 <div class="article-card__img">
-                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#2d5016,#4a8c2a);">🌿</div>
+                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#2d5016,#4a8c2a);"><i data-lucide="leaf" style="width:40px;height:40px;"></i></div>
                 </div>
                 <div class="article-card__body">
                   <div class="article-card__tag"><span class="tag tag--science">Climate</span></div>
@@ -761,7 +792,7 @@
 
               <article class="article-card" role="article">
                 <div class="article-card__img">
-                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#7B0010,#E8001D);">⚔️</div>
+                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#7B0010,#E8001D);"><i data-lucide="swords" style="width:40px;height:40px;"></i></div>
                 </div>
                 <div class="article-card__body">
                   <div class="article-card__tag"><span class="tag tag--politics">Conflict</span></div>
@@ -777,7 +808,7 @@
 
               <article class="article-card" role="article">
                 <div class="article-card__img">
-                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#003c78,#001a38);">🚢</div>
+                  <div class="article-card__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#003c78,#001a38);"><i data-lucide="ship" style="width:40px;height:40px;"></i></div>
                 </div>
                 <div class="article-card__body">
                   <div class="article-card__tag"><span class="tag tag--business">Trade</span></div>
@@ -798,16 +829,10 @@
             <div class="category-band__header">
               <h2 class="category-band__title">
                 <span class="category-band__title-bar" style="background:#5A32C8;" aria-hidden="true"></span>
-                💼 Business &amp; Finance
+                <i data-lucide="briefcase" style="color:#5A32C8"></i> Business
               </h2>
-              <a class="category-band__more" href="#" aria-label="More business news">
+              <a class="category-band__more" href="pages/business.html" aria-label="More business news">
                 More Business
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </a>
-            </div>
-            <div class="section-block">
-              <div class="article-list" role="list">
-                <article class="article-list-item fade-in" role="listitem article">
                   <div class="article-list-item__img">
                     <div class="article-list-item__placeholder" aria-hidden="true" style="background:linear-gradient(135deg,#f5a623,#c87000);">📈</div>
                   </div>
@@ -1300,15 +1325,16 @@
           <a href="#">Accessibility</a>
           <a href="#">Sitemap</a>
         </nav>
+        <div class="footer-brelinx" style="margin-top: 1.5rem; text-align: center; font-size: 0.85rem; color: #9ca3af; font-weight: 500;">
+          Powered by <a href="https://brelinx.com" target="_blank" rel="noopener noreferrer" style="color: #9ca3af; text-decoration: none;">Brelinx</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <!-- Back to Top -->
   <button class="back-to-top" id="back-to-top" aria-label="Back to top of page" title="Back to top">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-      <polyline points="18 15 12 9 6 15"/>
-    </svg>
+    <i data-lucide="chevron-up"></i>
   </button>
 
   <!-- Hidden utility class for screen readers -->
@@ -1320,7 +1346,8 @@
     if (cy) cy.textContent = new Date().getFullYear();
   </script>
 
-  <!-- Main JS (deferred for performance) -->
+  <!-- API & SDKs -->
+  <script src="js/api.js"></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>
