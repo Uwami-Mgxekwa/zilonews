@@ -3,7 +3,7 @@ Parse.initialize(
     "W01TOpY5m8xUpj19yxv7oWMBqGKUzanibBEvUvtz", // App ID
     "g2PCtjKnCN4IJN3jSFMQwQKrtezuGgRlDbP7Mh6k"  // JS Key
 );
-Parse.serverURL = 'https://parseapi.back4app.com/';
+ Parse.serverURL = 'https://parseapi.back4app.com/';
 
 const API = {
     /**
